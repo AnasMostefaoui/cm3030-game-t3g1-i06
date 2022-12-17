@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - teleporter-big
+  - teleporter-small
+  - bigPlayer
+  - smallPlayer
   layers:
   - Default
   - TransparentFX
