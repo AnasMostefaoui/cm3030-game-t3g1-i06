@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9155655409134379834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871465165943051613}
+  m_Layer: 0
+  m_Name: Snow Rock Cluster 02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871465165943051613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155655409134379834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.65461016, y: 1.5704738, z: 0.49463272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2463349745650863832}
+  - {fileID: 4716722926826269981}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2712621595083968456
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1871465165943051613}
+    m_Modifications:
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.60983515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6098351
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.60983515
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4253899
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.58463275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.94658166
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.32246438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 37.624
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042251192691292271, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_Name
+      value: Snow Rock 02 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6890053fe448e1d4bae5f4ef408b9879, type: 3}
+--- !u!4 &4716722926826269981 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+    type: 3}
+  m_PrefabInstance: {fileID: 2712621595083968456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5115970428756732941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1871465165943051613}
+    m_Modifications:
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.54004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.65461016
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.49463272
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042251192691292271, guid: 6890053fe448e1d4bae5f4ef408b9879,
+        type: 3}
+      propertyPath: m_Name
+      value: Snow Rock 02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6890053fe448e1d4bae5f4ef408b9879, type: 3}
+--- !u!4 &2463349745650863832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7264306701533389525, guid: 6890053fe448e1d4bae5f4ef408b9879,
+    type: 3}
+  m_PrefabInstance: {fileID: 5115970428756732941}
+  m_PrefabAsset: {fileID: 0}
