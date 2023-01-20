@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    public float levelTimer = 60f;
     public static GameManager Instance { get { return instance; } }
 
     public bool isGhostSelected = false;
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Update()
+    {
+        levelTimer -= Time.deltaTime;
     }
 
     public void TogglePause()
