@@ -7,16 +7,17 @@ public class SpiritBar : MonoBehaviour
 {
     private Slider spiritBar;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Get the slide and set is max value
         spiritBar = GetComponent<Slider>();
-        spiritBar.maxValue = GameManager.Instance.spiritHealth;
+        spiritBar.maxValue = GameManager.Instance.spiritManager.maxSpiritHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        spiritBar.value = GameManager.Instance.spiritHealth;
+        // Ensure slider up to date with health
+        spiritBar.value = GameManager.Instance.spiritManager.spiritHealth;
     }
 }

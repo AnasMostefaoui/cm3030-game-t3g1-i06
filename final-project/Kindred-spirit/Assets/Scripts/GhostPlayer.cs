@@ -7,36 +7,13 @@ public class GhostPlayer : MonoBehaviour
 {
     // List of all the ghost walls in the scene
     public GameObject[] ghostWalls;
-    // Check if the characters are close enough to link
-    private bool hasSpiritLink = false;
-    // Rate of change
-    public float rateOfSpiritIncrease = 5.0f;
-    public float rateOfSpiriTDecrease = 2.0f;
-    // Collider for spirit Range
-    public float spiritColliderRange = 6.0f;
+    
 
     void Start()
     {
         // Find all the ghost Walls
         ghostWalls = GameObject.FindGameObjectsWithTag("GhostWall");
-        GetComponent<CapsuleCollider>().radius = spiritColliderRange;
-    }
-
-    private void Update()
-    {
-        // Check the spirit link is in use
-        if (GameManager.Instance.spiritlinkActive)
-        {
-            // Add or remove spirit health depending on spirit link
-            if (hasSpiritLink && GameManager.Instance.spiritHealth < 100)
-            {
-                GameManager.Instance.spiritHealth += Time.deltaTime * rateOfSpiritIncrease;
-            }
-            else if (!hasSpiritLink && GameManager.Instance.spiritHealth > 0)
-            {
-                GameManager.Instance.spiritHealth -= Time.deltaTime * rateOfSpiriTDecrease;
-            }
-        }
+        GetComponent<CapsuleCollider>().radius = GameManager.Instance.spiritManager.spiritLinkRange;
     }
 
     // Enable spirit link when within radius
@@ -44,7 +21,7 @@ public class GhostPlayer : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            hasSpiritLink = true;
+            GameManager.Instance.spiritManager.hasSpiritLink = true;
         }
     }
 
@@ -53,7 +30,7 @@ public class GhostPlayer : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            hasSpiritLink = false;
+            GameManager.Instance.spiritManager.hasSpiritLink = false;
         }
     }
 
