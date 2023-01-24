@@ -3272,7 +3272,7 @@ PrefabInstance:
     - target: {fileID: 5206502752920743921, guid: ffca8ad9fa1e9974cb87b2e81a875dd7,
         type: 3}
       propertyPath: m_Name
-      value: Urn 01
+      value: SpiritUrn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffca8ad9fa1e9974cb87b2e81a875dd7, type: 3}
@@ -3315,9 +3315,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostWalls: []
-  rateOfSpiritIncrease: 20
-  rateOfSpiriTDecrease: 3
-  spiritColliderRange: 6
 --- !u!54 &972857768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4795,6 +4792,10 @@ MonoBehaviour:
   maxSpiritHealth: 100
   spiritHealth: 0
   spiritlinkActive: 0
+  hasSpiritLink: 0
+  rateOfSpiritIncrease: 5
+  rateOfSpiriTDecrease: 2
+  spiritLinkRange: 6
   toggleSpiritLink:
     m_PersistentCalls:
       m_Calls:
@@ -5365,38 +5366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5e236bc5b75484c8d87128b9c91869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spiritHealth: 100
-  spiritlinkActive: 0
-  toggleSpiritLink:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1044817917}
-        m_MethodName: ToggleSpiritUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  spiritManager: {fileID: 1297872609}
   isGhostSelected: 0
   isPaused: 0
-  gameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1044817917}
-        m_MethodName: GameOverUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1491466670
 Transform:
   m_ObjectHideFlags: 0
@@ -6344,9 +6316,20 @@ MonoBehaviour:
   triggerEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1491466669}
+      - m_Target: {fileID: 1297872609}
         m_MethodName: ToggleSpiritLink
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1875174479}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
