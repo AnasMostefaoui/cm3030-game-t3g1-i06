@@ -12,6 +12,7 @@ public class SpiritManager : MonoBehaviour
 
     // Keep track of spirit link being active
     public bool spiritlinkActive = false;
+
     // True allows healing when in range
     public bool allowSpiritLinkHeal = true;
 

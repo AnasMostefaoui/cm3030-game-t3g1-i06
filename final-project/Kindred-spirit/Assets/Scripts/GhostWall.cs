@@ -5,14 +5,19 @@ using UnityEngine.Events;
 
 public class GhostWall : MonoBehaviour
 {
+    // Turns the ghost wall on or off
     public void ToggleGhostWall()
     {
         if (gameObject.activeSelf){
-            gameObject.SetActive(false); //Remove this for actual implmentation, will alway be active
-            Debug.Log("Ghost walls active: " + gameObject.name);
+            gameObject.SetActive(false); 
+            //TODO  --- Remove the above line for actual implmentation, will alway be active. 
+            // Will set the material shader to normal
+            // Will activate the wall collider
         } else {
-            gameObject.SetActive(true);//Remove this for actual implmentation, will alway be active
-            Debug.Log("Ghost walls deactivated: " + gameObject.name);
+            gameObject.SetActive(true);
+            //TODO  --- Remove the above line for actual implmentation, will alway be active. 
+            // Will set the material shader to have an effect
+            // Will deactivate the wall collider
         }
     }
 }

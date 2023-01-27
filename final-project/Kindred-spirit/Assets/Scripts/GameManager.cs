@@ -5,13 +5,22 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    // instance for GameManager singleton
     private static GameManager instance;
 
-    public float levelTimer = 60f;
+    // Allow public access to GameManage singleton instance
     public static GameManager Instance { get { return instance; } }
 
+    // Get Managers
+    public SpiritManager spiritManager;
+
+    // True if the player has selected the Ghost
     public bool isGhostSelected = false;
+
+    // True if game is paused
     public bool isPaused = false;
+
+    // Use onAwake to setup GameManager singleton
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -24,14 +33,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        levelTimer -= Time.deltaTime;
-    }
-
+    // Pauses and Unpauses the game using timescale
     public void TogglePause()
     {
-        Debug.Log(Time.timeScale);
+        Debug.Log("Pause has been toggled to: " + isPaused);
         if (!isPaused)
         {
             Time.timeScale = 0;
