@@ -6,7 +6,11 @@ using UnityEngine.Events;
 public class GhostPlayer : MonoBehaviour
 {
     public GameObject[] ghostWalls;
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     void Start()
     {
         ghostWalls = GameObject.FindGameObjectsWithTag("GhostWall");
