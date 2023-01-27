@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GhostWall
   - Moveable
+  - Moveable
   layers:
   - Default
   - TransparentFX
