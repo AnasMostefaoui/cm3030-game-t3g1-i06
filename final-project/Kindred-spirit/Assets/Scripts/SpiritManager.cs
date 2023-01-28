@@ -13,6 +13,9 @@ public class SpiritManager : MonoBehaviour
     // Keep track of spirit link being active
     public bool spiritlinkActive = false;
 
+    // True allows healing when in range
+    public bool allowSpiritLinkHeal = true;
+
     // Check if the characters are close enough to link
     public bool hasSpiritLink = false;
 
@@ -54,7 +57,7 @@ public class SpiritManager : MonoBehaviour
         if (spiritlinkActive)
         {
             // Add or remove spirit health depending on spirit link
-            if (hasSpiritLink && spiritHealth < maxSpiritHealth)
+            if (hasSpiritLink && spiritHealth < maxSpiritHealth && allowSpiritLinkHeal)
             {
                 IncreaseSpiritHealth((Time.deltaTime * rateOfSpiritIncrease));
             }

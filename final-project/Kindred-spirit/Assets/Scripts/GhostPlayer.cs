@@ -7,7 +7,6 @@ public class GhostPlayer : MonoBehaviour
 {
     // List of all the ghost walls in the scene
     public GameObject[] ghostWalls;
-    
 
     void Start()
     {
