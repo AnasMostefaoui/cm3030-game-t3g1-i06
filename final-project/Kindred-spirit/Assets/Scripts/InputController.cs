@@ -6,24 +6,15 @@ using UnityEngine.Events;
 public class InputController : MonoBehaviour
 {
     // Events to be called
-    public UnityEvent onGhostSelectEvent;
-    public UnityEvent onPlayerSelectEvent;
     public UnityEvent onPause;
     public UnityEvent onUnPause;
 
     // Check for a key press and invoke relevent event
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && GameManager.Instance.isGhostSelected == true)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            onPlayerSelectEvent.Invoke();
-            GameManager.Instance.isGhostSelected = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && GameManager.Instance.isGhostSelected == false)
-        {
-            onGhostSelectEvent.Invoke();
-            GameManager.Instance.isGhostSelected  = true;
+            GameManager.Instance.CharacterSwitch();
         }
 
         // Press Escape key for pause menu
