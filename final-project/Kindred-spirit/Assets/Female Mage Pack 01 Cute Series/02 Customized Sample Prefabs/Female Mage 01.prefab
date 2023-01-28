@@ -627,6 +627,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -638,6 +639,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1575,10 +1577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1185742231638525458}
     m_Modifications:
-    - target: {fileID: 3899333218410084960, guid: ce40cc6398c85584da1aaf4071e2523d,
+    - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
         type: 3}
-      propertyPath: m_Name
-      value: Scroll Imperial
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
         type: 3}
@@ -1597,6 +1599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1608,16 +1615,6 @@ PrefabInstance:
     - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3899333218409719360, guid: ce40cc6398c85584da1aaf4071e2523d,
@@ -1634,6 +1631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899333218410084960, guid: ce40cc6398c85584da1aaf4071e2523d,
+        type: 3}
+      propertyPath: m_Name
+      value: Scroll Imperial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce40cc6398c85584da1aaf4071e2523d, type: 3}
@@ -1657,6 +1659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1672,6 +1679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1684,16 +1696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8722880934690188688, guid: 6dcfe01da40f416498581ce0c0c81482,
         type: 3}
@@ -1725,10 +1727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4498527585729127690}
     m_Modifications:
-    - target: {fileID: 1906518707231548909, guid: 59f5f90294adef8488f3fd98e4ae1965,
+    - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
         type: 3}
-      propertyPath: m_Name
-      value: Female Hair 04 Blonde
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
         type: 3}
@@ -1747,6 +1749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00000004470348
       objectReference: {fileID: 0}
@@ -1762,16 +1769,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906518707231521229, guid: 59f5f90294adef8488f3fd98e4ae1965,
-        type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -1784,6 +1781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906518707231548909, guid: 59f5f90294adef8488f3fd98e4ae1965,
+        type: 3}
+      propertyPath: m_Name
+      value: Female Hair 04 Blonde
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f5f90294adef8488f3fd98e4ae1965, type: 3}
@@ -1800,10 +1802,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4498527585729127690}
     m_Modifications:
-    - target: {fileID: 933103074204407576, guid: d6e94bb1e4587ba4fb616637396cd899,
+    - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
         type: 3}
-      propertyPath: m_Name
-      value: Female Head 02 Fair
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
         type: 3}
@@ -1822,6 +1824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00000004470348
       objectReference: {fileID: 0}
@@ -1834,16 +1841,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.000000104308114
-      objectReference: {fileID: 0}
-    - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 933103074203978552, guid: d6e94bb1e4587ba4fb616637396cd899,
         type: 3}
@@ -1860,6 +1857,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 933103074204407576, guid: d6e94bb1e4587ba4fb616637396cd899,
+        type: 3}
+      propertyPath: m_Name
+      value: Female Head 02 Fair
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e94bb1e4587ba4fb616637396cd899, type: 3}
 --- !u!4 &6032059397476933066 stripped
@@ -1875,10 +1877,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6083997977985265085}
     m_Modifications:
-    - target: {fileID: 6528161384204569234, guid: cb9ff7819afa28147ae26aa8aa3abac2,
+    - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
         type: 3}
-      propertyPath: m_Name
-      value: Wand Arch Aqua
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
         type: 3}
@@ -1897,6 +1899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -1908,16 +1915,6 @@ PrefabInstance:
     - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6528161384204080818, guid: cb9ff7819afa28147ae26aa8aa3abac2,
@@ -1934,6 +1931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528161384204569234, guid: cb9ff7819afa28147ae26aa8aa3abac2,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand Arch Aqua
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb9ff7819afa28147ae26aa8aa3abac2, type: 3}
