@@ -4,17 +4,56 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform targetObject;
+    public Transform targetObjectTransform;
     public Vector3 offset;
+    public bool lookAtPlayer = false;
+    public bool rotateAroundPlayer = false;
+    public float rotationSpeed = 5f;
 
+    [Range(0f, 1.0f)]
+    public float smoothFactor = 1.0f;
+    public float mouseSensitivity  = 1f;
+    public float lookSpeed = 2.0f;
+    public float lookXLimit = 45.0f;
+    float rotationX = 0;
+
+    void Start()
+    {
+        offset = transform.position - targetObjectTransform.position;
+        offset.x = 0;
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.position = targetObject.position + offset;
+        //var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        //transform.localEulerAngles = new Vector3(0, mouseX, 0);
+
+        //rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+        //rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+        //transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        //transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+         
     }
 
+
+    void LateUpdate()
+    {
+        var newPosition = targetObjectTransform.position + offset; 
+        transform.position = Vector3.Slerp(transform.position, newPosition, smoothFactor);
+        if( rotateAroundPlayer)
+        {
+            var cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
+            offset = cameraTurnAngle * offset;
+        }
+        if(lookAtPlayer)
+        {
+            transform.LookAt(targetObjectTransform);
+        } 
+    }
+
+    // we should be able to delete this and rely on event instead
     public void SetTarget(Transform newTarget)
     {
-        targetObject = newTarget;
+        targetObjectTransform = newTarget;
     }
 }
