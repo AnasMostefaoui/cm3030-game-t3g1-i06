@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public SpiritManager spiritManager;
     public UIManager uiManager;
     // True if the player has selected the Ghost
-    public bool isGhostSelected = false;
+    //public bool isGhostSelected = false;
 
     // True if game is paused
     public bool isPaused = false;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Reference to both Characters
     private GameObject humanCharacter;
     private GameObject ghostCharacter;
+    private GameObject currentPlayer;
 
     // Main camera for switching
     private Camera mainCamera;
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
         humanCharacter = GameObject.FindGameObjectWithTag("Player");
         ghostCharacter = GameObject.FindGameObjectWithTag("GhostPlayer");
         mainCamera = Camera.main;
+        currentPlayer = humanCharacter;
+        DisablePlayerControl(ghostCharacter);
     }
 
     // Pauses and Unpauses the game using timescale
@@ -62,27 +66,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void DisablePlayerControl(GameObject player)
+    {
+        player.GetComponent<ISelectablePlayer>().Deselect();
+        player.GetComponent<Mover>().enabled = false;
+        player.GetComponentInChildren<Animator>().SetBool("isRunning", false);
+    }
+
+    private void EnablePlayerControl(GameObject player)
+    {
+        player.GetComponent<ISelectablePlayer>().Select();
+        player.GetComponent<Mover>().enabled = true;
+        mainCamera.GetComponent<CameraFollow>().SetTarget(player.transform);
+    }
+
     public void CharacterSwitch()
     {
-        if (isGhostSelected)
+        if (currentPlayer == ghostCharacter)
         {
-            // Switch to human
-            isGhostSelected = false;
-            ghostCharacter.GetComponent<GhostPlayer>().DeSelectGhost();
-            humanCharacter.GetComponent<HumanPlayer>().SelectPlayer();
-            humanCharacter.GetComponent<Mover>().enabled = true;
-            ghostCharacter.GetComponent<Mover>().enabled = false;
-            uiManager.TogglePlayer();
-            mainCamera.GetComponent<CameraFollow>().SetTarget(humanCharacter.transform);
-        } else {
-            // Switch to Ghost 
-            isGhostSelected = true;
-            ghostCharacter.GetComponent<GhostPlayer>().SelectGhost();
-            humanCharacter.GetComponent<HumanPlayer>().DeSelectPlayer();
-            humanCharacter.GetComponent<Mover>().enabled = false;
-            ghostCharacter.GetComponent<Mover>().enabled = true;
-            uiManager.TogglePlayer();
-            mainCamera.GetComponent<CameraFollow>().SetTarget(ghostCharacter.transform);            
+            DisablePlayerControl(ghostCharacter);
+            EnablePlayerControl(humanCharacter);
+            currentPlayer = humanCharacter;
+        } else if(currentPlayer == humanCharacter) {
+            DisablePlayerControl(humanCharacter);
+            EnablePlayerControl(ghostCharacter);
+            currentPlayer = ghostCharacter;
         }
+
+        uiManager.refreshUI();
     }
+
+    public bool isHumanSelected => currentPlayer == humanCharacter;
+    public bool isGhostSelected => currentPlayer == ghostCharacter;
 }

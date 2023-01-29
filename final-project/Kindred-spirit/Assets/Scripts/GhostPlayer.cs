@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GhostPlayer : MonoBehaviour
+public class GhostPlayer : MonoBehaviour, ISelectablePlayer
 {
     // List of all the ghost walls in the scene
     public GameObject[] ghostWalls;
@@ -33,20 +34,6 @@ public class GhostPlayer : MonoBehaviour
         }
     }
 
-    // Called when the player switches to the Ghost
-    public void SelectGhost()
-    {
-        Debug.Log("Selected Ghost");
-        ToggleGhostWalls();
-    }
-
-    // Called when the player switches to the Human
-    public void DeSelectGhost()
-    {
-        Debug.Log("DeSelected Ghost");
-        ToggleGhostWalls();
-    }
-
     // Turns all the Ghost walls on or off
     public void ToggleGhostWalls()
     {
@@ -54,5 +41,17 @@ public class GhostPlayer : MonoBehaviour
         {
             wall.GetComponent<GhostWall>().ToggleGhostWall();
         }
+    }
+
+    public void Select()
+    {
+        Debug.Log("Selected Ghost");
+        ToggleGhostWalls();
+    }
+
+    public void Deselect()
+    {
+        Debug.Log("DeSelected Ghost");
+        ToggleGhostWalls();
     }
 }

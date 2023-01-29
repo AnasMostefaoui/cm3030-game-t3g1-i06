@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
+    enum CharacterUISlot
+    {
+        Human,
+        Ghost
+    }
+
     // On screen text to show active player
     public TMPro.TextMeshProUGUI humanPlayerText;
     public TMPro.TextMeshProUGUI ghostPlayerText;
@@ -17,46 +23,34 @@ public class UIManager : MonoBehaviour
     // UI to show on game over
     public GameObject gameOverUI;
 
-    // Called when the players are switched
-    public void TogglePlayer()
+
+    public void refreshUI()
     {
-        // Check which player is selected and enable or disable UI's
         if (GameManager.Instance.isGhostSelected)
         {
-            EnablePlayerUI();
-            DisableGhostUI();
-        } else {
-            DisablePlayerUI();
-            EnableGhostUI();
+            EnableUISlot(CharacterUISlot.Ghost);
+            DisableUISlot(CharacterUISlot.Human);
         }
+        else if (GameManager.Instance.isHumanSelected)
+        {
+            EnableUISlot(CharacterUISlot.Human);
+            DisableUISlot(CharacterUISlot.Ghost);
+        } 
     }
 
-    // Enable Ghost UI to change text and colour
-    public void EnableGhostUI()
+    private void EnableUISlot(CharacterUISlot uiSlot)
     {
-        ghostPlayerText.text = "Ghost Enabled";
-        ghostPlayerText.color = Color.green;
+        var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
+        var uiText = uiSlot ==  CharacterUISlot.Human ? "Human" : "Ghost";
+        textMesh.text = $"{uiText} Enabled";
+        textMesh.color = Color.green;
     }
-
-    // Disable Ghost UI to change text and colour
-    void DisableGhostUI()
+    private void DisableUISlot(CharacterUISlot uiSlot)
     {
-        ghostPlayerText.text = "Ghost Disabled";
-        ghostPlayerText.color = Color.red;
-    }
-
-    // Enable Human UI to change text and colour
-    void EnablePlayerUI()
-    {
-        humanPlayerText.text = "Player Enabled";
-        humanPlayerText.color = Color.green;
-    }
-
-    // Disable Human UI to change text and colour
-    void DisablePlayerUI()
-    {
-        humanPlayerText.text = "Player Disabled";
-        humanPlayerText.color = Color.red;
+        var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
+        var uiText = uiSlot == CharacterUISlot.Human ? "Human" : "Ghost";
+        textMesh.text = $"{uiText} Disabled";
+        textMesh.color = Color.red;
     }
 
     // Shoud paused UI
