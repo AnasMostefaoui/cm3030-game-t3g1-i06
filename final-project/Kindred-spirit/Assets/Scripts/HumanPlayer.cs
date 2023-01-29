@@ -1,17 +1,16 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanPlayer : MonoBehaviour
+public class HumanPlayer : MonoBehaviour, ISelectablePlayer
 {
-    // Called when the player switched to the human
-    public void SelectPlayer()
+    public void Select()
     {
         Debug.Log("Selected Player");
     }
 
-    // Called when the player switches to the Ghost
-    public void DeSelectPlayer()
+    public void Deselect()
     {
         Debug.Log("Deselected Player");
     }

@@ -6,33 +6,51 @@ public class Mover : MonoBehaviour
 {
     [SerializeField]
     public float speed = 10f;
-    private Rigidbody rigidBody;
-    private Vector3 movementVec;
+    private Animator animator;
+    public float rotationSpeed = 720f;
+    private float Gravity = 20.0f;
+    public CharacterController characterController;
+
+    private Vector3 currentMovementVector = Vector3.zero;
 
 
     // Use this for initialization
     void Start()
     {
-        rigidBody = this.GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        movementVec = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
-    }
+        var horizontalInput = Input.GetAxis("Horizontal");
+        var verticalInput = Input.GetAxis("Vertical");
+        // Calculate the forward vector relative to the camera
+        var CameraForwardDirection = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+        var moveVector = verticalInput * CameraForwardDirection + horizontalInput * Camera.main.transform.right;
+        if (moveVector.magnitude > 1f)
+        {
+            moveVector.Normalize();
+        }
+        // Calculate the rotation for the player
+        moveVector = transform.InverseTransformDirection(moveVector);
+
+        // Get Euler angles
+        float turnAmount = Mathf.Atan2(moveVector.x, moveVector.z);
+        transform.Rotate(0, turnAmount * rotationSpeed * Time.deltaTime, 0);
 
 
-    void FixedUpdate()
-    {
-        moveCharacter(movementVec);
-        rigidBody.MoveRotation(Quaternion.LookRotation(rigidBody.velocity));
+        if (characterController.isGrounded)
+        {
+            animator.SetBool("isRunning", moveVector.magnitude > 0);
 
-    }
+            currentMovementVector = transform.forward * moveVector.magnitude;
+            currentMovementVector *= speed;
 
+        }
 
-    void moveCharacter(Vector3 direction)
-    {
-        rigidBody.velocity = direction * speed;
+        currentMovementVector.y -= Gravity * Time.deltaTime;
+        characterController.Move(currentMovementVector * Time.deltaTime);
     }
 }
