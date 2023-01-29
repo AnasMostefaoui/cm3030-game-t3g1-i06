@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
     // Get Managers
     public SpiritManager spiritManager;
     public UIManager uiManager;
-    // True if the player has selected the Ghost
-    //public bool isGhostSelected = false;
 
     // True if game is paused
     public bool isPaused = false;

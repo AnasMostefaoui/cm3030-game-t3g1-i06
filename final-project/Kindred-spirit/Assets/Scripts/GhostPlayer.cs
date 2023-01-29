@@ -37,6 +37,7 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
     // Turns all the Ghost walls on or off
     public void ToggleGhostWalls()
     {
+        Debug.Log("ToggleGhostWalls");
         foreach (GameObject wall in ghostWalls)
         {
             wall.GetComponent<GhostWall>().ToggleGhostWall();
