@@ -8,8 +8,9 @@ public class PressureSwitch : MonoBehaviour
     // Event to cal
     public UnityEvent switchTriggered;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Hi");
         // Call the event when collider enters
         switchTriggered.Invoke();
     }
