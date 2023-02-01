@@ -30,7 +30,7 @@ public class Platform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Ensure platform should be moving
         if (isMoving)
@@ -72,5 +72,19 @@ public class Platform : MonoBehaviour
     {
         endPosition = end;
         startPosition = start;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" || other.tag == "GhostPlayer") {
+            other.transform.parent = transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" || other.tag == "GhostPlayer") {
+            other.transform.parent = null;
+        }
     }
 }
