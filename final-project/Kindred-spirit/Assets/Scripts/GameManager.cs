@@ -38,10 +38,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-    }
 
-    private void Start()
-    {
         // Find characters
         humanCharacter = GameObject.FindGameObjectWithTag("Player");
         ghostCharacter = GameObject.FindGameObjectWithTag("GhostPlayer");
