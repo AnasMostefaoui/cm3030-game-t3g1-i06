@@ -29,9 +29,6 @@ public class SpiritManager : MonoBehaviour
     // activate or deactivate spirit link
     public UnityEvent toggleSpiritLink;
 
-    // Game Over if no spirit link
-    public UnityEvent gameOver;
-
     private void Start()
     {
         // Set the spirit health to max
@@ -41,10 +38,9 @@ public class SpiritManager : MonoBehaviour
     private void Update()
     {
         // Game over if spirt health runs out
-        if (spiritHealth <= 0)
+        if (spiritHealth <= 0 )
         {
-            gameOver.Invoke();
-            Time.timeScale = 0f;
+            GameManager.Instance.isGameOver = true;
         }
 
         // Handles automatic increases and decreases
