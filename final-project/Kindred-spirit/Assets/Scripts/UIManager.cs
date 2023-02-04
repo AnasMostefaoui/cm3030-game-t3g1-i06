@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
@@ -13,6 +15,7 @@ public class UIManager : MonoBehaviour
     // On screen text to show active player
     public TMPro.TextMeshProUGUI humanPlayerText;
     public TMPro.TextMeshProUGUI ghostPlayerText;
+    public float FadingSpeed;
 
     // UI to Active/Deactive when paused
     public GameObject pauseUI;
@@ -23,7 +26,9 @@ public class UIManager : MonoBehaviour
     // UI to show on game over
     public GameObject gameOverUI;
 
+    public GameObject tutorialSwitchHint;
 
+    private bool switchHintShowed = false;
     private void Start()
     {
         GameManager.onGameOver += GameOverUI;
@@ -76,6 +81,24 @@ public class UIManager : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
+    public void TutorialSwitchCharacterHint()
+    {
+        if (switchHintShowed) return;
+        tutorialSwitchHint.SetActive(true);
+        StartCoroutine(FadeUIElement(tutorialSwitchHint.GetComponentInChildren<Text>()));
+    }
+
+    private IEnumerator FadeUIElement( Text element)
+    {
+        element.color = new Color(element.color.r, element.color.g, element.color.b, 1);
+        while (element.color.a > 0.0f)
+        {
+            element.color = new Color(element.color.r, element  .color.g, element   .color.b, element.color.a - (Time.deltaTime / FadingSpeed));
+            yield return null;
+        }
+        element.gameObject.SetActive(false);
+        yield return null;
+    }
     // Turn the spirit UI on or off
     public void ToggleSpiritUI()
     {

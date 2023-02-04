@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4534585, g: 0.7004041, b: 0.9698941, a: 1}
+  m_IndirectSpecularColor: {r: 0.45343006, g: 0.70037127, b: 0.969843, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12645,13 +12645,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041796758}
-  m_LocalRotation: {x: -0.102030404, y: -0, z: -0, w: 0.9947813}
-  m_LocalPosition: {x: 94.04, y: 5.03, z: 5.48}
+  m_LocalRotation: {x: 0.12282203, y: 0, z: 0, w: 0.9924287}
+  m_LocalPosition: {x: 94.04, y: 7.5, z: 6.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -11.712001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.11, y: 0, z: 0}
 --- !u!114 &1041796762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15138,20 +15138,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044817917}
         m_MethodName: ToggleSpiritUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1044817917}
-        m_MethodName: GameOverUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25569,3 +25555,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898040826}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3508671401017500728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852008, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508671402137852020, guid: 576e1163937555349b23f787ca360822,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathZone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 576e1163937555349b23f787ca360822, type: 3}

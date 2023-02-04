@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HumanPlayer : MonoBehaviour, ISelectablePlayer
 {
+    [SerializeField]
     public bool canSwitch = false;
     public void Select()
     {
@@ -15,4 +16,7 @@ public class HumanPlayer : MonoBehaviour, ISelectablePlayer
     {
         Debug.Log("Deselected Player");
     }
+
+    public void ToggleSwitchAbility() => canSwitch = !canSwitch;
+    public void EnableSwitchingAbility() => canSwitch = true;
 }
