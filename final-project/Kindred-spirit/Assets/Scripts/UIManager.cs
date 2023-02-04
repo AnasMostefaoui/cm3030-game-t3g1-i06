@@ -24,6 +24,11 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverUI;
 
 
+    private void Start()
+    {
+        GameManager.onGameOver += GameOverUI;
+    }
+
     public void refreshUI()
     {
         if (GameManager.Instance.isGhostSelected)

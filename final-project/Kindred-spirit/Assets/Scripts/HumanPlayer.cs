@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HumanPlayer : MonoBehaviour, ISelectablePlayer
 {
+    public bool canSwitch = false;
     public void Select()
     {
         Debug.Log("Selected Player");

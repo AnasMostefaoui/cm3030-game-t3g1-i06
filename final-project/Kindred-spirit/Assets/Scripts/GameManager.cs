@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     // Allow public access to GameManage singleton instance
     public static GameManager Instance { get { return instance; } }
 
+    // Game Over delegate
+    public delegate void OnGameOver();
+
+    public static event OnGameOver onGameOver;
+
     // Get Managers
     public SpiritManager spiritManager;
     public UIManager uiManager;
@@ -19,10 +24,26 @@ public class GameManager : MonoBehaviour
     // True if game is paused
     public bool isPaused = false;
 
+    // True if game is over
+    public bool isGameOver
+    {
+        get => _isGameOver;
+        set
+        {
+            _isGameOver = value;
+            if(_isGameOver)
+            {
+                onGameOver?.Invoke();
+            }
+        }
+    }
+
+
     // Reference to both Characters
     private GameObject humanCharacter;
     private GameObject ghostCharacter;
     private GameObject currentPlayer;
+    private bool _isGameOver = false;
 
     // Main camera for switching
     private Camera mainCamera;
@@ -45,6 +66,14 @@ public class GameManager : MonoBehaviour
         mainCamera = Camera.main;
         currentPlayer = humanCharacter;
         DisablePlayerControl(ghostCharacter);
+        onGameOver += handleGameOver;
+    }
+
+    private void handleGameOver()
+    {
+        isPaused = true;
+        humanCharacter.SetActive(false);
+        ghostCharacter.SetActive(false);
     }
 
     // Pauses and Unpauses the game using timescale
@@ -77,6 +106,11 @@ public class GameManager : MonoBehaviour
 
     public void CharacterSwitch()
     {
+        if(humanCharacter.GetComponent<HumanPlayer>().canSwitch == false )
+        {
+            return;
+        }
+
         if (currentPlayer == ghostCharacter)
         {
             DisablePlayerControl(ghostCharacter);
