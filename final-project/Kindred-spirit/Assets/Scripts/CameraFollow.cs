@@ -40,10 +40,10 @@ public class CameraFollow : MonoBehaviour
     {
         var newPosition = targetObjectTransform.position + offset; 
         transform.position = Vector3.Slerp(transform.position, newPosition, smoothFactor);
-        if( rotateAroundPlayer)
+        if( rotateAroundPlayer && Input.GetMouseButton(0) )
         {
             var cameraTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
-            offset = cameraTurnAngle * offset;
+            offset = cameraTurnAngle * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.right) *  offset;
         }
         if(lookAtPlayer)
         {
