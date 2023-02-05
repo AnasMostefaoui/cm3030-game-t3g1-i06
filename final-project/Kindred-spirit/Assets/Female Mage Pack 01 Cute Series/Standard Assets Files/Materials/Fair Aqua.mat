@@ -8,17 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fair Aqua
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 1f922e5c9266262478c5c97b4ce51b65, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -63,12 +68,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendOutline: 0
+    - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -79,21 +92,25 @@ Material:
     - _Offset2: 0
     - _Outline: 1
     - _Parallax: 0.02
+    - _QueueOffset: 0
     - _RampSmooth: 0.7
     - _RampSmoothAdd: 0.75
     - _RampSmoothOtherLights: 0.5
     - _RampThreshold: 0.35
     - _RampThresholdOtherLights: 0.5
+    - _ReceiveShadows: 1
     - _RimMax: 0.85
     - _RimMin: 0.6
     - _RimStrength: 0.5
     - _Shininess: 0.1
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecBlend: 1
     - _SpecSmooth: 1
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _SrcBlendOutline: 0
+    - _Surface: 0
     - _TCP2_DISABLE_WRAPPED_LIGHT: 1
     - _TCP2_OUTLINE_CONST_SIZE: 0
     - _TCP2_OUTLINE_TEXTURED: 0
@@ -103,10 +120,12 @@ Material:
     - _TCP2_ZSMOOTH_ON: 0
     - _TexLod: 5
     - _UVSec: 0
+    - _WorkflowMode: 1
     - _ZSmooth: -0.5
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffTint: {r: 0.7, g: 0.8, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0.6774621, b: 1, a: 1}
