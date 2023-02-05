@@ -2084,25 +2084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481739820}
   m_CullTransparentMesh: 0
---- !u!1 &483258904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3988633478447831290, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2761379705801446424}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &483258906
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483258904}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.5925493, y: 2.7815895, z: 5.3849487}
-  m_Center: {x: 0, y: 1.3905444, z: 0}
 --- !u!1001 &505796594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3281,7 +3262,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2761379705801446424}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483258904}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f1c70d75e9ac948a93379bf5a9b753, type: 3}
@@ -7941,16 +7922,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 349873617}
     m_Modifications:
-    - target: {fileID: 2761379705290904944, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
-        type: 3}
-      propertyPath: isMoving
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2761379705290904944, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2761379705752180533, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
         type: 3}
       propertyPath: m_Name
@@ -8009,16 +7980,6 @@ PrefabInstance:
     - target: {fileID: 2761379705752180534, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116494080054845780, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116494080054845780, guid: ceda9653b86fd6f4f9e4047bab7d7f0a,
-        type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
