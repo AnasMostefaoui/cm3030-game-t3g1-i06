@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: 42d856d4a39b1854ebf9379c59ffdd9a, type: 2}
+  ghostMaterial: {fileID: 2100000, guid: 4bd125f664cd8694b9962339e5868824, type: 2}
 --- !u!1001 &7550934804910068872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19,10 +21,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6540157150227912814, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8451779201011309404, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
       propertyPath: m_Name
-      value: GhostWall
+      value: GhostWall (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8451779201011309404, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
@@ -52,12 +59,12 @@ PrefabInstance:
     - target: {fileID: 9209191798000633651, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09033632
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9209191798000633651, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73.49016
+      value: -80.56
       objectReference: {fileID: 0}
     - target: {fileID: 9209191798000633651, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}

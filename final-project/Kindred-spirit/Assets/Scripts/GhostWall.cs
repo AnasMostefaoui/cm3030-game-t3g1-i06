@@ -5,23 +5,20 @@ using UnityEngine.Events;
 
 public class GhostWall : MonoBehaviour
 {
+    public Material defaultMaterial;
+    public Material ghostMaterial;
+
     // Turns the ghost wall on or off
     public void ToggleGhostWall()
     {
-
-        Debug.Log("inside ToggleGhostWall");
-        gameObject.SetActive(GameManager.Instance.isGhostSelected);
-
-        //if (gameObject.activeSelf){
-        //    gameObject.SetActive(GameManager.Instance.isGhostSelected); 
-        //    //TODO  --- Remove the above line for actual implmentation, will alway be active. 
-        //    // Will set the material shader to normal
-        //    // Will activate the wall collider
-        //} else {
-        //    gameObject.SetActive(true);
-        //    //TODO  --- Remove the above line for actual implmentation, will alway be active. 
-        //    // Will set the material shader to have an effect
-        //    // Will deactivate the wall collider
-        //}
+        if (GameManager.Instance.isGhostSelected) {
+            gameObject.GetComponent<Renderer>().material = defaultMaterial;
+            gameObject.GetComponent<MeshCollider>().enabled = true;
+            Debug.Log("isHumanSelected");
+        } else {
+            gameObject.GetComponent<Renderer>().material = ghostMaterial;
+            gameObject.GetComponent<MeshCollider>().enabled = false;
+            Debug.Log("Ghost selected");
+        }
     }
 }
