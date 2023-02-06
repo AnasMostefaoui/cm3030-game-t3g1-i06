@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14101642, g: 0.11796007, b: 0.09347264, a: 1}
+  m_IndirectSpecularColor: {r: 0.14101642, g: 0.11796007, b: 0.09347259, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -959,6 +959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controls Btn
       objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905946, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b, type: 3}
 --- !u!1 &552687047
@@ -1013,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e82fff5514b540579283fd802f5899c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLevel: 
+  startLevel: 1
   mainMenu: {fileID: 552687047}
   controlMenu: {fileID: 2017970238}
 --- !u!4 &591038901 stripped
@@ -6651,6 +6656,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Select Btn
       objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905946, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b, type: 3}
 --- !u!1001 &1596000681
@@ -7651,6 +7661,36 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit Game
       objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 552687049}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136960898616905944, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8136960898616905945, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7739,7 +7779,7 @@ PrefabInstance:
     - target: {fileID: 8136960898616905945, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -96
       objectReference: {fileID: 0}
     - target: {fileID: 8136960898616905945, guid: c6e4ff8add6f746c89ce2b1c40cf9c9b,
         type: 3}
