@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: e3334cbee4e084a909e4bdc64a8415ba
   - enabled: 1
+    path: Assets/Scenes/Transition.unity
+    guid: ade30f6c6731b1a4e88b72c4c98a9ed1
+  - enabled: 1
     path: Assets/Scenes/Level0_FollowTheLight CB edit.unity
     guid: a3a01142453754ca59fb71add1fce7ce
   - enabled: 1
