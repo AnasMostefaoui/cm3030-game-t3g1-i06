@@ -10368,6 +10368,8 @@ MonoBehaviour:
   hintTime: 4
   hintUI: {fileID: 1084528745}
   hintTextUI: {fileID: 1941814577}
+  shouldDisplay: 0
+  hintStatus: 0
 --- !u!1001 &786940410
 PrefabInstance:
   m_ObjectHideFlags: 0

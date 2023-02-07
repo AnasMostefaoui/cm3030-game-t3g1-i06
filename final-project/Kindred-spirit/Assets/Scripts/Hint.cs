@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HintMessageStatus
+{
+    Hidden,
+    FadingIn,
+    Visible,
+    FadingOut,
+
+}
 //[CreateAssetMenu(fileName = "Player Hint", menuName = "Hint")]
 public class Hint : MonoBehaviour//ScriptableObject
 {
@@ -13,34 +21,68 @@ public class Hint : MonoBehaviour//ScriptableObject
     public string hintMessage = "This is test hint text. I still need to implement Ghost/Player difference and improve code";
 
     // Time in Seconds to display the message for
-    public float hintTime = 4f;
+    public float hintTime = 10f;
 
     // The hint user interface object
     public GameObject hintUI;
     // The hint text for the UI
     public TMPro.TextMeshProUGUI hintTextUI;
 
+    public bool shouldDisplay = false;
+
+    public HintMessageStatus hintStatus = HintMessageStatus.Hidden; 
+
+    void Start()
+    { 
+    }
+
+
     private void Update()
     {
-        // When the H key is pressed update UI and show hint
-        if (Input.GetKeyDown(KeyCode.H))
+        if(hintStatus == HintMessageStatus.Visible)
         {
-            // Update the hint Message
             hintTextUI.text = hintMessage;
             // Activate the hint UI
             hintUI.SetActive(true);
+        }
+        if (hintStatus == HintMessageStatus.FadingOut)
+        {
             // Coroutine to hide hint after a given time
-            StartCoroutine(HideMessage(hintTime));
+            StartCoroutine(FadeUIElement());
+        }
+        if(hintStatus == HintMessageStatus.Hidden)
+        {
+            StopAllCoroutines();
         }
     }
 
-    // Hides the message after an amount of time
-    IEnumerator HideMessage(float hintTimeLength)
+
+    private IEnumerator FadeUIElement()
     {
-        // Wait for the required time
-        yield return new WaitForSeconds(hintTimeLength);
-        // Hide the Hint UI
+        hintTextUI.color = new Color(hintTextUI.color.r, hintTextUI.color.g, hintTextUI.color.b, 1);
+        while (hintTextUI.color.a > 0.0f)
+        {
+            hintTextUI.color = new Color(hintTextUI.color.r, hintTextUI.color.g, hintTextUI.color.b, hintTextUI.color.a - (Time.deltaTime / hintTime));
+            yield return null;
+        }
+        hintStatus = HintMessageStatus.Hidden;
+        hintTextUI.color = new Color(hintTextUI.color.r, hintTextUI.color.g, hintTextUI.color.b, 1);
         hintUI.SetActive(false);
+        yield return null;
     }
 
+
+    private void OnTriggerStay(Collider other)
+    {
+        hintStatus = HintMessageStatus.Visible;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hintStatus = HintMessageStatus.FadingOut;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+    }
 }
