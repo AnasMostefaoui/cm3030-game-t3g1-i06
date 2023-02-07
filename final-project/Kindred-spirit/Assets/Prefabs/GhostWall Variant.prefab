@@ -24,12 +24,12 @@ PrefabInstance:
     - target: {fileID: 6540157150227912814, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8451779201011309404, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
       propertyPath: m_Name
-      value: GhostWall (1)
+      value: GhostWall Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8451779201011309404, guid: 5604bca7f29c0e64f99cd4ff1117c0e4,
         type: 3}
