@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3093,6 +3093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  ghostMaterial: {fileID: 0}
 --- !u!1001 &250021883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8319,6 +8321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  ghostMaterial: {fileID: 0}
 --- !u!1 &657975848
 GameObject:
   m_ObjectHideFlags: 0
@@ -12787,7 +12791,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1006572989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1491466669}
+        m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1006572989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13180,9 +13195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanPlayerText: {fileID: 1829794739}
   ghostPlayerText: {fileID: 386865542}
+  FadingSpeed: 0
   pauseUI: {fileID: 1312123462}
   spiritUI: {fileID: 439450553}
   gameOverUI: {fileID: 897110069}
+  tutorialSwitchHint: {fileID: 0}
 --- !u!4 &1047679876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3769855650915594765, guid: 9b7392a6ff6906842ab7d70d27b8f649,
@@ -16532,6 +16549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  ghostMaterial: {fileID: 0}
 --- !u!4 &1297100005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1883436963157017875, guid: cd50baea5e7afd04bb1cc0a965677633,
@@ -16594,20 +16613,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044817917}
         m_MethodName: ToggleSpiritUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  gameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1044817917}
-        m_MethodName: GameOverUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17001,6 +17006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  ghostMaterial: {fileID: 0}
 --- !u!1001 &1323064090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24013,6 +24020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd46f88a60d595749825e51726a22495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 0}
+  ghostMaterial: {fileID: 0}
 --- !u!1001 &1853918518
 PrefabInstance:
   m_ObjectHideFlags: 0

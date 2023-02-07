@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
         uiManager.refreshUI();
     }
 
+    public void RestartLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     public bool isHumanSelected => currentPlayer == humanCharacter;
     public bool isGhostSelected => currentPlayer == ghostCharacter;
 }
