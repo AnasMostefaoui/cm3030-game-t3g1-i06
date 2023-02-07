@@ -13902,7 +13902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1781540562}
+      - m_Target: {fileID: 1141112356}
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -16212,6 +16212,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58cb036361149a849993ae7d1eb238e5, type: 3}
+--- !u!114 &1141112356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3456000048076856318, guid: 58cb036361149a849993ae7d1eb238e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141112355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c2fa2fd651dc24899d78b517a2376f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1152309632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 596569809761522709, guid: c5b7c10e97187aa41b34219c6120d74e,
@@ -28938,7 +28950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do Something
+  m_text: Restart Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

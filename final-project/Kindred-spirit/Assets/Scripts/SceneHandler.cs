@@ -49,6 +49,12 @@ public class SceneHandler : MonoBehaviour
             nextScene = 0;
         }
     }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
+
     public void LoadTransition()
     {
         SceneManager.LoadScene(transitionScene, LoadSceneMode.Single);
