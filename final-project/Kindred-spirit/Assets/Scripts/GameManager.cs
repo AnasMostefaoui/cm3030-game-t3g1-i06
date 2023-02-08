@@ -69,6 +69,16 @@ public class GameManager : MonoBehaviour
         onGameOver += handleGameOver;
     }
 
+    private void OnDestroy()
+    {
+        var subscribers = onGameOver.GetInvocationList();
+
+        for (int i = 0; i < subscribers.Length; i++)
+        {
+            onGameOver -= subscribers[i] as OnGameOver;
+        }
+    }
+
     private void handleGameOver()
     {
         isPaused = true;
