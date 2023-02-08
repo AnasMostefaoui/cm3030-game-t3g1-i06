@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -69,6 +70,16 @@ public class GameManager : MonoBehaviour
         onGameOver += handleGameOver;
     }
 
+    private void OnDestroy()
+    {
+        var subscribers = onGameOver.GetInvocationList();
+
+        for (int i = 0; i < subscribers.Length; i++)
+        {
+            onGameOver -= subscribers[i] as OnGameOver;
+        }
+    }
+
     private void handleGameOver()
     {
         isPaused = true;
@@ -123,6 +134,11 @@ public class GameManager : MonoBehaviour
         }
 
         uiManager.refreshUI();
+    }
+    public void RestartLevel()
+    {
+        isGameOver = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
     public bool isHumanSelected => currentPlayer == humanCharacter;
