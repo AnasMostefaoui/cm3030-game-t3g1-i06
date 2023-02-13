@@ -73,7 +73,7 @@ public class SceneHandler : MonoBehaviour
         SceneManager.LoadScene(transitionScene.getIndex(), LoadSceneMode.Single);
     }
 
-    IEnumerator LoadNextScene()
+    public IEnumerator LoadNextScene()
     {
         // Wait for the required time
         yield return new WaitForSeconds(transitionTime);
