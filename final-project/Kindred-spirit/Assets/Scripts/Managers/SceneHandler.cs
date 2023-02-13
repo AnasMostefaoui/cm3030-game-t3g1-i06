@@ -2,6 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+public enum GameScenes
+{
+    MainMenu = 0,
+    Transition,
+    Introduction,
+    Level0,
+    Level1,
+}
+
+public static class GameScenesExtensions
+{
+    public static int getIndex(this GameScenes gameScene)
+    {
+        return (int)gameScene;
+    }
+}
+
 public class SceneHandler : MonoBehaviour
 {
     // instance for SceneHandler singleton
@@ -11,10 +29,10 @@ public class SceneHandler : MonoBehaviour
     public static SceneHandler Instance { get { return instance; } }
 
     [SerializeField]
-    public int nextScene;
+    public GameScenes nextScene;
 
     [SerializeField]
-    public int transitionScene;
+    public GameScenes transitionScene = GameScenes.Transition;
 
     [SerializeField]
     private float transitionTime = 2f;
@@ -38,13 +56,13 @@ public class SceneHandler : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Loaded scene [" + scene.buildIndex + "] - " + scene.name);
-        if (scene.buildIndex == transitionScene)
+        Debug.Log("Loaded scene [" + scene.buildIndex + "] - " + scene.name + " -- " + SceneManager.sceneCountInBuildSettings);
+        if (scene.buildIndex == transitionScene.getIndex() )
         {
             StartCoroutine(LoadNextScene());
         }
 
-        if(scene.buildIndex == 3)
+        if(scene.buildIndex == SceneManager.sceneCountInBuildSettings)
         {
             nextScene = 0;
         }
@@ -52,13 +70,13 @@ public class SceneHandler : MonoBehaviour
 
     public void LoadTransition()
     {
-        SceneManager.LoadScene(transitionScene, LoadSceneMode.Single);
+        SceneManager.LoadScene(transitionScene.getIndex(), LoadSceneMode.Single);
     }
 
-    IEnumerator LoadNextScene()
+    public IEnumerator LoadNextScene()
     {
         // Wait for the required time
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+        SceneManager.LoadScene(nextScene.getIndex(), LoadSceneMode.Single);
     }
 }
