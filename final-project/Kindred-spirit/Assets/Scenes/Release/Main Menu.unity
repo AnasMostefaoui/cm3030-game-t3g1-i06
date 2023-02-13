@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e82fff5514b540579283fd802f5899c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLevel: 2
+  startLevel: 1
   mainMenu: {fileID: 552687047}
   controlMenu: {fileID: 2017970238}
 --- !u!4 &591038901 stripped

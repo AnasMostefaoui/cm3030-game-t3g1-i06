@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField]
-    private int startLevel;
+    private GameScenes startLevel = GameScenes.Introduction;
 
     [SerializeField]
     private GameObject mainMenu;
@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         // Loads the firsst level and begins a new game
-        SceneManager.LoadScene(startLevel, LoadSceneMode.Single);
+        SceneManager.LoadScene(startLevel.getIndex(), LoadSceneMode.Single);
     }
 
     public void OpenControlMenu()
