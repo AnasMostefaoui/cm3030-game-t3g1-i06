@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3730748888937459911, guid: a788c9ab1ed75b048aa3e7688dc50270,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3730748889001924161, guid: a788c9ab1ed75b048aa3e7688dc50270,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 3730748889001924162, guid: a788c9ab1ed75b048aa3e7688dc50270,
         type: 3}
       propertyPath: m_Name
-      value: Water
+      value: Water Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a788c9ab1ed75b048aa3e7688dc50270, type: 3}

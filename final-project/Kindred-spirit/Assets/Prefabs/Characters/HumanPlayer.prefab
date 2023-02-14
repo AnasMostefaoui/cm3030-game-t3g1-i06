@@ -108,7 +108,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 3.88
   m_Radius: 0.89
-  m_SlopeLimit: 100
+  m_SlopeLimit: 10
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.0001
