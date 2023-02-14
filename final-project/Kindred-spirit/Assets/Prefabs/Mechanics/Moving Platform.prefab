@@ -93,6 +93,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &483258906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988633478447831290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.5925493, y: 5.464569, z: 5.3849487}
+  m_Center: {x: 0, y: 2.7320342, z: 0}
 --- !u!114 &2761379705290904944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,19 +123,6 @@ MonoBehaviour:
   startPosition: {fileID: 2761379705142873153}
   endPosition: {fileID: 2761379705077588664}
   speed: 3
---- !u!65 &483258906
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3988633478447831290}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.5925493, y: 2.7815895, z: 5.3849487}
-  m_Center: {x: 0, y: 1.3905444, z: 0}
 --- !u!1001 &2761379705290904957
 PrefabInstance:
   m_ObjectHideFlags: 0
