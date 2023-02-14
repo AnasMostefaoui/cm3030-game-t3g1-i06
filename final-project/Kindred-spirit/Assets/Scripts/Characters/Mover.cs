@@ -94,6 +94,8 @@ public class Mover : MonoBehaviour
             {
                 animator.SetBool("isPushing", true );
                 animator.SetBool("isGrabing", false);
+                animator.SetFloat("direction", characterController.velocity.z < 0f ? 1 : -1);
+         
                 characterController.Move(desiredMoveDirection * pushingSpeed * Time.deltaTime);
             } else
             {
