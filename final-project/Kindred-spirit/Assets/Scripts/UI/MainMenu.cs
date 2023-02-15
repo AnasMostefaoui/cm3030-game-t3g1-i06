@@ -14,10 +14,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject controlMenu;
 
+    [SerializeField]
+    private GameObject creditsMenu;
+
     void Start()
     {
         mainMenu.SetActive(true);
         controlMenu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 
     public void StartGame()
@@ -38,16 +42,20 @@ public class MainMenu : MonoBehaviour
         controlMenu.SetActive(false);
     }
 
+    public void OpenCreditsMenu()
+    {
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+    }
+
+    public void CloseCreditsMenu()
+    {
+        mainMenu.SetActive(true);
+        creditsMenu.SetActive(false);
+    }
+
     public void OpenLevelSelect()
     {
 
-    }
-
-    public void QuitGame()
-    {
-        // Need to add a confirm screen
-        // Application.Quit does not function in editor preview. Will only take effect after build.
-        Debug.Log("Quit Game");
-        Application.Quit();
     }
 }
