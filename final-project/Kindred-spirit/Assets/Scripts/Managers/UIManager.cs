@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public TMPro.TextMeshProUGUI ghostPlayerText;
     public float FadingSpeed;
 
+    public GameObject humanIcon;
+    public GameObject dogIcon;
+
     // UI to Active/Deactive when paused
     public GameObject pauseUI;
 
@@ -47,17 +50,25 @@ public class UIManager : MonoBehaviour
 
     private void EnableUISlot(CharacterUISlot uiSlot)
     {
-        var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
-        var uiText = uiSlot ==  CharacterUISlot.Human ? "Human" : "Ghost";
-        textMesh.text = $"{uiText} Enabled";
-        textMesh.color = Color.green;
+        //var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
+        //var uiText = uiSlot ==  CharacterUISlot.Human ? "Human" : "Ghost";
+        //textMesh.text = $"{uiText} Enabled";
+        //textMesh.color = Color.green;
+        if (uiSlot == CharacterUISlot.Human){
+            humanIcon.SetActive(true);
+            dogIcon.SetActive(false);
+        } else
+        {
+            humanIcon.SetActive(false);
+            dogIcon.SetActive(true);
+        }
     }
     private void DisableUISlot(CharacterUISlot uiSlot)
     {
-        var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
-        var uiText = uiSlot == CharacterUISlot.Human ? "Human" : "Ghost";
-        textMesh.text = $"{uiText} Disabled";
-        textMesh.color = Color.red;
+        //var textMesh = uiSlot == CharacterUISlot.Human ? humanPlayerText : ghostPlayerText;
+        //var uiText = uiSlot == CharacterUISlot.Human ? "Human" : "Ghost";
+        //textMesh.text = $"{uiText} Disabled";
+        //textMesh.color = Color.red;
     }
 
     // Shoud paused UI
