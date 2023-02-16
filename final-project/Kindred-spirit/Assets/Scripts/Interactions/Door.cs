@@ -16,16 +16,19 @@ public class Door : MonoBehaviour
     public float openingSpeed = 2f;
     private float originalY = 0;
     private DoorState doorState = DoorState.Closed;
+    private AudioSource doorOpenSound;
 
     private void Start()
     {
         originalY = transform.position.y;
+        doorOpenSound = gameObject.GetComponent<AudioSource>();
     }
 
     // Called when a door is opened
     public void OpenDoor()
     {
         doorState = DoorState.IsOpening;
+        doorOpenSound.Play();
     }
 
     public void CloseDoor()
