@@ -24,6 +24,9 @@ public class Mover : MonoBehaviour
     private Animator animator;
     private Vector3 currentMovementVector = Vector3.zero;
 
+    // For Jumping
+    private bool isJumping = false;
+    public float jumpHeight = 10f;
 
     // Use this for initialization
     void Start()
@@ -50,13 +53,23 @@ public class Mover : MonoBehaviour
 
         if (characterController.isGrounded)
         {
+            isJumping = false;
+
             animator.SetBool("isRunning", moveVector.magnitude > 0);
 
             currentMovementVector = transform.forward * moveVector.magnitude;
             currentMovementVector *= speed;
 
+            if (!isJumping)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    isJumping = true;
+                    currentMovementVector.y += jumpHeight;
+                }
+            }
         }
-
+     
         currentMovementVector.y -= Gravity * Time.deltaTime;
         characterController.Move(currentMovementVector * Time.deltaTime);
     }
