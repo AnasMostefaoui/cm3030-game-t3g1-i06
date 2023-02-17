@@ -5,19 +5,13 @@ using UnityEngine;
 public class UISounds : MonoBehaviour
 {
     [SerializeField]
-    GameObject selectSoundObj;
     AudioSource selectSound;
 
     [SerializeField]
-    GameObject confirmSoundObj;
     AudioSource confirmSound;
 
-    private void Start()
-    {
-        selectSound = selectSoundObj.GetComponent<AudioSource>();
-        confirmSound = confirmSoundObj.GetComponent<AudioSource>();
-    }
-
+    [SerializeField]
+    AudioSource backSound;
 
     public void PlaySelect()
     {
@@ -27,5 +21,10 @@ public class UISounds : MonoBehaviour
     public void PlayConfirm()
     {
         confirmSound.Play();
+    }
+
+    public void PlayBack()
+    {
+        backSound.Play();
     }
 }
