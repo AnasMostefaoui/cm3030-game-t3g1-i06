@@ -111,6 +111,10 @@ public class Mover : MonoBehaviour
         if (other.gameObject.tag == "Moveable" && playerType == PlayerType.Human)
         {
             other.gameObject.transform.parent = null;
+            if (other.gameObject.GetComponent<AudioSource>() != null)
+            {
+                other.gameObject.GetComponent<AudioSource>().enabled = false;
+            }
             isPushing = false;
         }
     }
@@ -123,6 +127,10 @@ public class Mover : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) )
             {
                 isPushing = true;
+                if(other.gameObject.GetComponent<AudioSource>() != null)
+                {
+                    other.gameObject.GetComponent<AudioSource>().enabled = true;
+                }
                 var vect = new Vector3(0, other.gameObject.transform.position.x, other.gameObject.transform.position.z);
                // transform.LookAt(vect);
                 float turnAmount = Mathf.Atan2(other.gameObject.transform.position.x, other.gameObject.transform.position.z);
@@ -132,7 +140,11 @@ public class Mover : MonoBehaviour
             {
                 transform.LookAt(null);
                 other.gameObject.transform.parent = null;
-               isPushing = false;
+                if (other.gameObject.GetComponent<AudioSource>() != null)
+                {
+                    other.gameObject.GetComponent<AudioSource>().enabled = false;
+                }
+                isPushing = false;
             }
         }
  
