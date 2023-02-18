@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     // Get Managers
     public SpiritManager spiritManager;
     public UIManager uiManager;
+    public SoundManager soundManager;
 
     // True if game is paused
     public bool isPaused = false;
@@ -124,10 +125,12 @@ public class GameManager : MonoBehaviour
 
         if (currentPlayer == ghostCharacter)
         {
+            soundManager.PlayHumanSwitch();
             DisablePlayerControl(ghostCharacter);
             EnablePlayerControl(humanCharacter);
             currentPlayer = humanCharacter;
         } else if(currentPlayer == humanCharacter) {
+            soundManager.PlayDogSwitch();
             DisablePlayerControl(humanCharacter);
             EnablePlayerControl(ghostCharacter);
             currentPlayer = ghostCharacter;
