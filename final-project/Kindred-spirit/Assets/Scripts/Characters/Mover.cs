@@ -60,14 +60,11 @@ public class Mover : MonoBehaviour
             currentMovementVector = transform.forward * moveVector.magnitude;
             currentMovementVector *= speed;
 
-            if (!isJumping)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isJumping = true;
-                    currentMovementVector.y += jumpHeight;
-                }
-            }
+                isJumping = true;
+                currentMovementVector.y += jumpHeight;
+            }            
         }
      
         currentMovementVector.y -= Gravity * Time.deltaTime;
