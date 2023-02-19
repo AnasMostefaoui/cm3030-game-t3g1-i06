@@ -69,6 +69,8 @@ public class GameManager : MonoBehaviour
         currentPlayer = humanCharacter;
         DisablePlayerControl(ghostCharacter);
         onGameOver += handleGameOver;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDestroy()
@@ -84,6 +86,8 @@ public class GameManager : MonoBehaviour
     private void handleGameOver()
     {
         isPaused = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         humanCharacter.SetActive(false);
         ghostCharacter.SetActive(false);
     }
@@ -141,6 +145,8 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         isGameOver = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 

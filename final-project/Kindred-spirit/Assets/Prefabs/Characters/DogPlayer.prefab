@@ -84,6 +84,7 @@ MonoBehaviour:
   pushingSpeed: 1
   rotationSpeed: 720
   characterController: {fileID: 0}
+  jumpHeight: 10
 --- !u!114 &3290750913555657597
 MonoBehaviour:
   m_ObjectHideFlags: 0
