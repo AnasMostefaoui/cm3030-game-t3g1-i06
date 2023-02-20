@@ -9,32 +9,12 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
     // List of all the ghost walls in the scene
     public GameObject[] ghostWalls;
 
-    [SerializeField]
-    GameObject spiritLineObj;
-    LineRenderer spiritLine;
-
-
-    GameObject playerchar;
-
     void Start()
     {
         // Find all the ghost Walls
         ghostWalls = GameObject.FindGameObjectsWithTag("GhostWall");
         GetComponent<CapsuleCollider>().radius = GameManager.Instance.spiritManager.spiritLinkRange;
-
-        spiritLine = spiritLineObj.GetComponent<LineRenderer>();
-        playerchar = GameObject.FindGameObjectWithTag("Player");
     }
-
-    void Update()
-    {
-        
-        Vector3 playerPos = playerchar.transform.position;
-        spiritLine.SetPosition(0, gameObject.transform.position + new Vector3(0,0.5f,0));
-        spiritLine.SetPosition(1, playerPos +new Vector3(0, 0.8f, 0));
-
-    }
-
 
     // Enable spirit link when within radius
     private void OnTriggerEnter(Collider other)
@@ -42,6 +22,7 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
         if(other.tag == "Player")
         {
             GameManager.Instance.spiritManager.hasSpiritLink = true;
+            GameManager.Instance.spiritManager.EnableSpiritLine();
         }
     }
 
@@ -51,6 +32,7 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
         if (other.tag == "Player")
         {
             GameManager.Instance.spiritManager.hasSpiritLink = false;
+            GameManager.Instance.spiritManager.DisablepiritLine();
         }
     }
 
