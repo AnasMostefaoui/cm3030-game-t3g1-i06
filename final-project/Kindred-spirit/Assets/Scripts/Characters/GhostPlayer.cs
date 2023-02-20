@@ -32,7 +32,7 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
         if (other.tag == "Player")
         {
             GameManager.Instance.spiritManager.hasSpiritLink = false;
-            GameManager.Instance.spiritManager.DisablepiritLine();
+            GameManager.Instance.spiritManager.BreakSpiritLine();
         }
     }
 

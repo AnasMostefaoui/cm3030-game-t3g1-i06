@@ -30,6 +30,7 @@ public class SpiritManager : MonoBehaviour
     public UnityEvent toggleSpiritLink;
 
     // The line showing the visual spirit link
+    public bool spiritLineActive = false;
     public GameObject spiritLineObj;
     LineRenderer spiritLine;
 
@@ -66,24 +67,39 @@ public class SpiritManager : MonoBehaviour
 
     public void EnableSpiritLine()
     {
-        spiritLine.enabled = true;
+        if (spiritLineActive)
+        {
+            spiritLine.enabled = true;
+        }
     }
 
-    public void DisablepiritLine()
+    public void BreakSpiritLine()
     {
-        spiritLine.enabled = false;
+        if (spiritLineActive)
+        {
+            // Get midpoint between human and ghost
+            Vector3 particlePos = (humanChar.transform.position + ghostChar.transform.position) / 2;
+
+            // Set particle emitter to midpoint
+            spiritLineObj.transform.position = particlePos + Vector3.up;
+
+            // Play the particle explosion
+            spiritLineObj.GetComponent<ParticleSystem>().Play();
+
+            spiritLine.enabled = false;
+        }
     }
 
     private void UpdateSpiritLinePos()
     {
-        if (spiritlinkActive)
+        if (spiritlinkActive && spiritLineActive)
         {
             // Get character positions
             Vector3 playerPos = humanChar.transform.position;
             Vector3 ghostPos = ghostChar.transform.position;
 
             // Set the line position
-            spiritLine.SetPosition(0, playerPos + new Vector3(0, 0.5f, 0));
+            spiritLine.SetPosition(0, playerPos + new Vector3(0, 1.8f, 0));
             spiritLine.SetPosition(1, ghostPos + new Vector3(0, 0.8f, 0));
         }
     }
