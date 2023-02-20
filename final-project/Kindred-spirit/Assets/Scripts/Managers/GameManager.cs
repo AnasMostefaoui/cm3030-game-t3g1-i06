@@ -150,6 +150,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
+    public GameObject GetHumanPlayer()
+    {
+        return humanCharacter;
+    }
+
+    public GameObject GetGhostPlayer()
+    {
+        return ghostCharacter;
+    }
+
     public bool isHumanSelected => currentPlayer == humanCharacter;
     public bool isGhostSelected => currentPlayer == ghostCharacter;
 }
