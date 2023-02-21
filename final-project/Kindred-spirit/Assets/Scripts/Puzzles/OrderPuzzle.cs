@@ -20,9 +20,14 @@ public class OrderPuzzle : MonoBehaviour
     public List<GameObject> winningPadOrder;
     private int startTrigger = 0;
     private int triggerNumber;
-   
+
+    private AudioSource puzzleSound;
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
+
     private void Start()
     {
+        puzzleSound = GetComponent<AudioSource>();
         triggerNumber = startTrigger;
         RandomiseWinningOrder();
     }
@@ -41,6 +46,8 @@ public class OrderPuzzle : MonoBehaviour
                 if (puzzlePairs[i].trigger == triggerObj)
                 {
                     puzzlePairs[i].fire.gameObject.SetActive(true);
+                    puzzleSound.clip = correctSound;
+                    puzzleSound.Play();
                     if (CheckCompletion())
                     {
                         PuzzleComplete();
@@ -51,6 +58,8 @@ public class OrderPuzzle : MonoBehaviour
         }
         else
         {
+            puzzleSound.clip = incorrectSound;
+            puzzleSound.Play();
             triggerNumber = startTrigger;
             for (int i = 0; i < puzzlePairs.Length; i++)
             {

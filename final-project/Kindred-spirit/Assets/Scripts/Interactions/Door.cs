@@ -34,6 +34,7 @@ public class Door : MonoBehaviour
     public void CloseDoor()
     {
         doorState = DoorState.IsClosing;
+        doorOpenSound.Play();
         StartCoroutine(ClosingDoor());
     }
 

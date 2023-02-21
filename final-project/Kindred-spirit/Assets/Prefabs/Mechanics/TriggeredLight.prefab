@@ -208,6 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7635e8abdaf33db4890fc176173e7f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightIncreaseRate: 0.25
+  lightIncreaseRate: 0.3
   lightIncreasePerTime: 0.06
-  lightIntensityTarget: 16.5
+  lightIntensityTarget: 500
