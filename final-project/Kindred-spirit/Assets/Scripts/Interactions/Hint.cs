@@ -30,13 +30,13 @@ public class Hint : MonoBehaviour//ScriptableObject
 
     public bool shouldDisplay = false;
 
-    public HintMessageStatus hintStatus = HintMessageStatus.Hidden; 
+    public HintMessageStatus hintStatus = HintMessageStatus.Hidden;
 
-    void Start()
-    { 
+    private void Start()
+    {
+        hintUI = GameManager.Instance.uiManager.hintUI;
+        hintTextUI = GameManager.Instance.uiManager.hintTextUI;
     }
-
-
     private void Update()
     {
         if(hintStatus == HintMessageStatus.Visible)

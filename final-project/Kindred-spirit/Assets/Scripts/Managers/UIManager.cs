@@ -28,6 +28,11 @@ public class UIManager : MonoBehaviour
 
     public GameObject tutorialSwitchHint;
 
+    // The hint user interface object
+    public GameObject hintUI;
+    // The hint text for the UI
+    public TMPro.TextMeshProUGUI hintTextUI;
+
     private bool switchHintShowed = false;
     private void Start()
     {
