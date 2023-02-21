@@ -37,6 +37,9 @@ public class SpiritManager : MonoBehaviour
     GameObject humanChar;
     GameObject ghostChar;
 
+    public GameObject humanSpiritGlow;
+    public GameObject ghostSpiritGlow;
+
     private void Start()
     {
         // Set the spirit health to max
@@ -69,6 +72,8 @@ public class SpiritManager : MonoBehaviour
     {
         if (spiritLineActive)
         {
+            humanSpiritGlow.SetActive(true);
+            ghostSpiritGlow.SetActive(true);
             spiritLine.enabled = true;
         }
     }
@@ -86,6 +91,8 @@ public class SpiritManager : MonoBehaviour
             // Play the particle explosion
             spiritLineObj.GetComponent<ParticleSystem>().Play();
 
+            humanSpiritGlow.SetActive(false);
+            ghostSpiritGlow.SetActive(false);
             spiritLine.enabled = false;
         }
     }
@@ -99,8 +106,8 @@ public class SpiritManager : MonoBehaviour
             Vector3 ghostPos = ghostChar.transform.position;
 
             // Set the line position
-            spiritLine.SetPosition(0, playerPos + new Vector3(0, 1.8f, 0));
-            spiritLine.SetPosition(1, ghostPos + new Vector3(0, 0.8f, 0));
+            spiritLine.SetPosition(0, playerPos + new Vector3(0,0.1f,0));
+            spiritLine.SetPosition(1, ghostPos + new Vector3(0, 0.1f, 0));
         }
     }
 
