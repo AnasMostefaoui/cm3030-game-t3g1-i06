@@ -40,6 +40,9 @@ public class SpiritManager : MonoBehaviour
     public GameObject humanSpiritGlow;
     public GameObject ghostSpiritGlow;
 
+    public Material glowMaterial;
+    public Material lineMaterial;
+
     private void Start()
     {
         // Set the spirit health to max
@@ -75,6 +78,7 @@ public class SpiritManager : MonoBehaviour
             humanSpiritGlow.SetActive(true);
             ghostSpiritGlow.SetActive(true);
             spiritLine.enabled = true;
+            StartCoroutine(GlowFadeIn());
         }
     }
 
@@ -91,9 +95,49 @@ public class SpiritManager : MonoBehaviour
             // Play the particle explosion
             spiritLineObj.GetComponent<ParticleSystem>().Play();
 
+            
+            spiritLine.enabled = false;
+            StartCoroutine(GlowFadeOut());
+        }
+    }
+
+    IEnumerator GlowFadeIn()
+    {
+        StopCoroutine(GlowFadeOut());
+        float transparency = glowMaterial.GetFloat("_Transparency");
+        if (transparency < 1)
+        {
+            lineMaterial.SetFloat("_Transparency", transparency + 0.01f);
+            glowMaterial.SetFloat("_Transparency", transparency + 0.01f);
+        }
+
+        yield return new WaitForSeconds(0.001f);
+
+        if (glowMaterial.GetFloat("_Transparency") < 1)
+        {
+            StartCoroutine(GlowFadeIn());
+        }
+    }
+
+    IEnumerator GlowFadeOut()
+    {
+        StopCoroutine(GlowFadeIn());
+        float transparency = glowMaterial.GetFloat("_Transparency");
+        if (transparency > 0)
+        {
+            lineMaterial.SetFloat("_Transparency", transparency - 0.01f);
+            glowMaterial.SetFloat("_Transparency", transparency - 0.01f);
+        }
+
+        yield return new WaitForSeconds(0.001f);
+
+        if (glowMaterial.GetFloat("_Transparency") > 0)
+        {
+            StartCoroutine(GlowFadeOut());
+        } else
+        {
             humanSpiritGlow.SetActive(false);
             ghostSpiritGlow.SetActive(false);
-            spiritLine.enabled = false;
         }
     }
 

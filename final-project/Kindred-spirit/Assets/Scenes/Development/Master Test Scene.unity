@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01369801, g: 0.13654625, b: 0.13696435, a: 1}
+  m_IndirectSpecularColor: {r: 0.013966805, g: 0.1365292, b: 0.13698384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10698,6 +10698,8 @@ MonoBehaviour:
   spiritLineObj: {fileID: 1516251190}
   humanSpiritGlow: {fileID: 1912365435}
   ghostSpiritGlow: {fileID: 1374224014}
+  glowMaterial: {fileID: 2100000, guid: d3ba48209bc1f4c9b9ac9118dcd798ef, type: 2}
+  lineMaterial: {fileID: 2100000, guid: 83240b7df4bd24e9aa9d4e08a9b2e25d, type: 2}
 --- !u!1001 &1303158098
 PrefabInstance:
   m_ObjectHideFlags: 0
