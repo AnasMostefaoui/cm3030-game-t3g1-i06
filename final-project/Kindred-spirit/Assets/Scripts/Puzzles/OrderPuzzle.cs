@@ -38,36 +38,38 @@ public class OrderPuzzle : MonoBehaviour
     public void PuzzlePairsTigger(GameObject triggerObj)
     {
         Debug.Log("triggered");
-        if (winningPadOrder[triggerNumber].gameObject == triggerObj)
+        if (!CheckCompletion())
         {
-            triggerNumber++;
-            for (int i = 0; i < puzzlePairs.Length; i++)
+            if (winningPadOrder[triggerNumber].gameObject == triggerObj)
             {
-                if (puzzlePairs[i].trigger == triggerObj)
+                triggerNumber++;
+                for (int i = 0; i < puzzlePairs.Length; i++)
                 {
-                    puzzlePairs[i].fire.gameObject.SetActive(true);
-                    puzzleSound.clip = correctSound;
-                    puzzleSound.Play();
-                    if (CheckCompletion())
+                    if (puzzlePairs[i].trigger == triggerObj)
                     {
-                        PuzzleComplete();
+                        puzzlePairs[i].fire.gameObject.SetActive(true);
+                        puzzleSound.clip = correctSound;
+                        puzzleSound.Play();
+                        if (CheckCompletion())
+                        {
+                            PuzzleComplete();
+                        }
+                        return;
                     }
-                    return;
+                }
+            }
+            else
+            {
+                puzzleSound.clip = incorrectSound;
+                puzzleSound.Play();
+                triggerNumber = startTrigger;
+                for (int i = 0; i < puzzlePairs.Length; i++)
+                {
+                    puzzlePairs[i].fire.gameObject.SetActive(false);
                 }
             }
         }
-        else
-        {
-            puzzleSound.clip = incorrectSound;
-            puzzleSound.Play();
-            triggerNumber = startTrigger;
-            for (int i = 0; i < puzzlePairs.Length; i++)
-            {
-                puzzlePairs[i].fire.gameObject.SetActive(false);
-            }
-        }
     }
-
     public bool CheckCompletion()
     {
         int checkCount = 0;
