@@ -31,14 +31,17 @@ public class SpiritManager : MonoBehaviour
 
     // The line showing the visual spirit link
     public bool spiritLineActive = false;
-    public GameObject spiritLineObj;
+    public GameObject spiritLinkObj;
     LineRenderer spiritLine;
 
     GameObject humanChar;
     GameObject ghostChar;
 
-    public GameObject humanSpiritGlow;
-    public GameObject ghostSpiritGlow;
+    GameObject humanSpiritGlow;
+    GameObject ghostSpiritGlow;
+
+    Material glowMaterial;
+    Material lineMaterial;
 
     private void Start()
     {
@@ -46,11 +49,28 @@ public class SpiritManager : MonoBehaviour
         spiritHealth = maxSpiritHealth;
 
         // initialise the spirit link line
-        spiritLine = spiritLineObj.GetComponent<LineRenderer>();
+        spiritLine = spiritLinkObj.GetComponent<LineRenderer>();
 
         // initialise character object references
         humanChar = GameManager.Instance.GetHumanPlayer();
         ghostChar = GameManager.Instance.GetGhostPlayer();
+
+        // retreive the spirit glow objects
+        humanSpiritGlow = humanChar.transform.Find("SpiritGlow").gameObject;
+        ghostSpiritGlow = ghostChar.transform.Find("SpiritGlow").gameObject;
+
+        //  Get the materials
+        glowMaterial = humanSpiritGlow.GetComponent<MeshRenderer>().material;
+        lineMaterial = spiritLine.material;
+
+        // Make a copy of the materials so we can edit values non-destructively
+        glowMaterial = new Material(glowMaterial);
+        lineMaterial = new Material(lineMaterial);
+
+        // set the new materials
+        humanSpiritGlow.GetComponent<MeshRenderer>().material = glowMaterial;
+        ghostSpiritGlow.GetComponent<MeshRenderer>().material = glowMaterial;
+        spiritLine.material = lineMaterial;
     }
 
     private void Update()
@@ -75,6 +95,7 @@ public class SpiritManager : MonoBehaviour
             humanSpiritGlow.SetActive(true);
             ghostSpiritGlow.SetActive(true);
             spiritLine.enabled = true;
+            StartCoroutine(GlowFadeIn());
         }
     }
 
@@ -86,14 +107,56 @@ public class SpiritManager : MonoBehaviour
             Vector3 particlePos = (humanChar.transform.position + ghostChar.transform.position) / 2;
 
             // Set particle emitter to midpoint
-            spiritLineObj.transform.position = particlePos + Vector3.up;
+            spiritLinkObj.transform.position = particlePos + Vector3.up;
 
             // Play the particle explosion
-            spiritLineObj.GetComponent<ParticleSystem>().Play();
+            spiritLinkObj.GetComponent<ParticleSystem>().Play();
 
+            
+            spiritLine.enabled = false;
+            StartCoroutine(GlowFadeOut());
+        }
+    }
+
+    IEnumerator GlowFadeIn()
+    {
+        StopCoroutine(GlowFadeOut());
+        float transparency = glowMaterial.GetFloat("_Transparency");
+        if (transparency < 1)
+        {
+            lineMaterial.SetFloat("_Transparency", transparency + 0.01f);
+            glowMaterial.SetFloat("_Transparency", transparency + 0.01f);
+        }
+
+        yield return new WaitForSeconds(0.001f);
+
+        if (glowMaterial.GetFloat("_Transparency") < 1)
+        {
+            humanSpiritGlow.SetActive(true);
+            ghostSpiritGlow.SetActive(true);
+            StartCoroutine(GlowFadeIn());
+        }
+    }
+
+    IEnumerator GlowFadeOut()
+    {
+        StopCoroutine(GlowFadeIn());
+        float transparency = glowMaterial.GetFloat("_Transparency");
+        if (transparency > 0)
+        {
+            lineMaterial.SetFloat("_Transparency", transparency - 0.01f);
+            glowMaterial.SetFloat("_Transparency", transparency - 0.01f);
+        }
+
+        yield return new WaitForSeconds(0.001f);
+
+        if (glowMaterial.GetFloat("_Transparency") > 0)
+        {
+            StartCoroutine(GlowFadeOut());
+        } else
+        {
             humanSpiritGlow.SetActive(false);
             ghostSpiritGlow.SetActive(false);
-            spiritLine.enabled = false;
         }
     }
 

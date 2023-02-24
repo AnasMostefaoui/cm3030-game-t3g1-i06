@@ -23,7 +23,7 @@ Material:
     - _BaseSpread: 1.61
     - _Distortion: 19.9
     - _TopSpread: 1.99
-    - _Transparency: 0.687
+    - _Transparency: 0.040007465
     - _WaveCount: 0.88
     - _WaveSpeed: 10
     m_Colors:
