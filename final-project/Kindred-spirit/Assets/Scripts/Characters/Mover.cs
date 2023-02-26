@@ -8,6 +8,7 @@ public enum PlayerType
     Dog,
 }
 
+
 public class Mover : MonoBehaviour
 {
     [SerializeField]
@@ -18,7 +19,7 @@ public class Mover : MonoBehaviour
     public float rotationSpeed = 720f;
     public CharacterController characterController;
 
-    private bool isPushing = false;
+    public bool isPushing = false;
     private float Gravity = 20.0f;
     private Animator animator;
     private Vector3 currentMovementVector = Vector3.zero;
@@ -46,7 +47,10 @@ public class Mover : MonoBehaviour
        if(!moveForwardOnly)
         {
             moveVector += horizontalInput * Camera.main.transform.right;
-        } 
+        } else
+        {
+            moveVector = verticalInput * transform.forward;
+        }
 
         if (moveVector.magnitude > 1f)
         {
@@ -62,12 +66,12 @@ public class Mover : MonoBehaviour
         {
             isJumping = false;
 
-            animator.SetBool("isRunning", moveVector.magnitude > 0);
+            animator.SetBool("isRunning", !isPushing && moveVector.magnitude > 0);
 
             currentMovementVector = transform.forward * moveVector.magnitude;
             currentMovementVector *= speed;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !isPushing)
             {
                 isJumping = true;
                 currentMovementVector.y += jumpHeight;

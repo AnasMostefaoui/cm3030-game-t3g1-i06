@@ -5,9 +5,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PushTargetsAction : MonoBehaviour
 {
-    private float pushingSpeed = 8f;
+    private float pushingSpeed = 20f;
     public GameObject target;
     private GameObject player;
+    private Mover playerMovementScript;
 
     private CharacterController playerController;
     private Animator playerAnimator;
@@ -19,6 +20,7 @@ public class PushTargetsAction : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = GetComponentInChildren<Animator>();
         playerController = GetComponent<CharacterController>();
+        playerMovementScript = GetComponent<Mover>();
     }
 
     // Update is called once per frame
@@ -30,18 +32,14 @@ public class PushTargetsAction : MonoBehaviour
             playerAnimator.SetBool("isGrabing", false);
             return;
         }
+
         var inputVect = new Vector2(0, Input.GetAxis("Vertical"));
         inputVect.Normalize();
 
-        playerAnimator.SetBool("isRunning", false);
 
-        if (inputVect.magnitude <= 0)
-        {
-            playerAnimator.SetBool("isGrabing", true);
-            return;
-        }
-        playerAnimator.SetBool("isPushing", inputVect.magnitude > 0);
-        playerAnimator.SetFloat("direction", playerController.velocity.z < 0f ? 1 : -1);
+        playerAnimator.SetBool("isGrabing", playerController.velocity.magnitude <= 0);
+        playerAnimator.SetBool("isPushing", playerController.velocity.magnitude > 0);
+        //playerAnimator.SetFloat("direction", playerController.velocity.z < 0f ? 1 : -1);
         
         target.GetComponent<Rigidbody>().AddForce(
             player.transform.forward * inputVect.magnitude * pushingSpeed,
@@ -52,12 +50,7 @@ public class PushTargetsAction : MonoBehaviour
     {
         if (other.gameObject.tag == "Moveable")
         {
-            isPushing = false;
-            target = null;
-            if (other.gameObject.GetComponent<AudioSource>() != null)
-            {
-                other.gameObject.GetComponent<AudioSource>().enabled = false;
-            }
+            DropMoveable();
         }
     }
 
@@ -71,32 +64,42 @@ public class PushTargetsAction : MonoBehaviour
 
         if (!Input.GetKey(KeyCode.Space) )
         {
-            Debug.Log($"other.gameObject.tag {other.gameObject.tag} KeyCode: {Input.GetKey(KeyCode.Space)}");
-            isPushing = false;
-            target = null;
-            player.GetComponent<Mover>().moveForwardOnly = false;
-            if (other.gameObject.GetComponent<AudioSource>() != null)
-            {
-                other.gameObject.GetComponent<AudioSource>().enabled = false;
-            }
+            DropMoveable();
             return;
         }
 
-        isPushing = true;
+
         player.GetComponent<Mover>().moveForwardOnly = true;
-        var camera = GameObject.FindObjectOfType<CameraFollowExtra>();
-        camera.shouldRecenter = true;
+        playerMovementScript.isPushing = true;
         target = other.gameObject;
+        isPushing = true;
+
+        // bring the camera behind the player
+        var camera = FindObjectOfType<CameraFollowExtra>();
+        camera.shouldRecenter = true;
+        // no up movement allowed
         var direction = target.transform.position - player.transform.position;
         direction.y = 0;
-
+        // make the player look straight to the moveable
         player.transform.rotation = Quaternion.LookRotation(direction);
+        camera.transform.rotation = Quaternion.LookRotation(direction);
 
         if (other.gameObject.GetComponent<AudioSource>() != null)
         {
             other.gameObject.GetComponent<AudioSource>().enabled = true;
         }
+    }
 
-
+    private void DropMoveable()
+    {
+        isPushing = false;
+        playerMovementScript.isPushing = false;
+        player.GetComponent<Mover>().moveForwardOnly = false;
+        if (target && target    .gameObject.GetComponent<AudioSource>() != null)
+        {
+            target.gameObject.GetComponent<AudioSource>().enabled = false;
+        }
+        target = null;
+        return;
     }
 }
