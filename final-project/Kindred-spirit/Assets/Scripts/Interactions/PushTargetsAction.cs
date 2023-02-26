@@ -13,7 +13,7 @@ public class PushTargetsAction : MonoBehaviour
     private CharacterController playerController;
     private Animator playerAnimator;
     private bool isPushing = false;
-    private Vector3 lockedForwardDirection;
+    private bool cameraWasCentered = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +51,7 @@ public class PushTargetsAction : MonoBehaviour
         if (other.gameObject.tag == "Moveable")
         {
             DropMoveable();
+            cameraWasCentered = false;
         }
     }
 
@@ -65,6 +66,7 @@ public class PushTargetsAction : MonoBehaviour
         if (!Input.GetKey(KeyCode.Space) )
         {
             DropMoveable();
+            cameraWasCentered = false;
             return;
         }
 
@@ -74,15 +76,20 @@ public class PushTargetsAction : MonoBehaviour
         target = other.gameObject;
         isPushing = true;
 
-        // bring the camera behind the player
-        var camera = FindObjectOfType<CameraFollow>();
-        camera.shouldRecenter = true;
+
         // no up movement allowed
         var direction = target.transform.position - player.transform.position;
         direction.y = 0;
         // make the player look straight to the moveable
         player.transform.rotation = Quaternion.LookRotation(direction);
-        camera.transform.rotation = Quaternion.LookRotation(direction);
+        if (!cameraWasCentered)
+        {   // bring the camera behind the player
+            var camera = FindObjectOfType<CameraFollow>();
+            camera.shouldRecenter = true;
+            cameraWasCentered = true;
+            camera.transform.rotation = Quaternion.LookRotation(direction);
+        }
+
 
         if (other.gameObject.GetComponent<AudioSource>() != null)
         {
