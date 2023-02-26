@@ -55,13 +55,15 @@ public class SpiritManager : MonoBehaviour
         humanChar = GameManager.Instance.GetHumanPlayer();
         ghostChar = GameManager.Instance.GetGhostPlayer();
 
+        Debug.Log(humanChar);
+
         // retreive the spirit glow objects
         humanSpiritGlow = humanChar.transform.Find("SpiritGlow").gameObject;
         ghostSpiritGlow = ghostChar.transform.Find("SpiritGlow").gameObject;
 
         //  Get the materials
         glowMaterial = humanSpiritGlow.GetComponent<MeshRenderer>().material;
-        lineMaterial = spiritLine.material;
+        lineMaterial = spiritLine.sharedMaterial;
 
         // Make a copy of the materials so we can edit values non-destructively
         glowMaterial = new Material(glowMaterial);

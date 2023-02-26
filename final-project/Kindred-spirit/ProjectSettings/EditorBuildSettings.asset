@@ -17,10 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Release/Level0_FollowTheLight v2.unity
     guid: c68a17df25a34f64d93ebc7ba11be667
-  - enabled: 0
-    path: Assets/Scenes/Release/Archive/Level0_FollowTheLight CB edit.unity
-    guid: a3a01142453754ca59fb71add1fce7ce
   - enabled: 1
     path: Assets/Scenes/Release/Level1_GetToKnowYourDog.unity
-    guid: 0179f1f81bc59194eabe3c6c98724ffb
+    guid: 0d953eaaf45578e42b93829ba4c0e18a
   m_configObjects: {}
