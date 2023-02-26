@@ -75,7 +75,7 @@ public class PushTargetsAction : MonoBehaviour
         isPushing = true;
 
         // bring the camera behind the player
-        var camera = FindObjectOfType<CameraFollowExtra>();
+        var camera = FindObjectOfType<CameraFollow>();
         camera.shouldRecenter = true;
         // no up movement allowed
         var direction = target.transform.position - player.transform.position;
