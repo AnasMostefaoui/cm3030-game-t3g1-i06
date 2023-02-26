@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
     public float lookSpeed = 2.0f;
     [SerializeField]
     public float lookXLimit = 45.0f;
-    float rotationX = 0;
+    float rotationX = 0; 
 
     void Start()
     {
