@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6989242947333838282}
   - component: {fileID: 3252023717897217031}
   - component: {fileID: 4655147042120370892}
+  - component: {fileID: 7495060696646774766}
   m_Layer: 0
   m_Name: MoveableBox
   m_TagString: Moveable
@@ -222,3 +223,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7495060696646774766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989242947333838288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5fe4b26ccfe08469e100e54618ba78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rigidBody: {fileID: 0}

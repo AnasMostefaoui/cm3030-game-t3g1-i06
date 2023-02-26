@@ -14,6 +14,7 @@ public class GhostPlayer : MonoBehaviour, ISelectablePlayer
         // Find all the ghost Walls
         ghostWalls = GameObject.FindGameObjectsWithTag("GhostWall");
         GetComponent<CapsuleCollider>().radius = GameManager.Instance.spiritManager.spiritLinkRange;
+
     }
 
     // Enable spirit link when within radius

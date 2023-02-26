@@ -70,7 +70,6 @@ public class PushTargetsAction : MonoBehaviour
             return;
         }
 
-
         player.GetComponent<Mover>().moveForwardOnly = true;
         playerMovementScript.isPushing = true;
         target = other.gameObject;
@@ -102,10 +101,14 @@ public class PushTargetsAction : MonoBehaviour
         isPushing = false;
         playerMovementScript.isPushing = false;
         player.GetComponent<Mover>().moveForwardOnly = false;
-        if (target && target    .gameObject.GetComponent<AudioSource>() != null)
+        if(target)
         {
-            target.gameObject.GetComponent<AudioSource>().enabled = false;
+            if (target.gameObject.GetComponent<AudioSource>() != null)
+            {
+                target.gameObject.GetComponent<AudioSource>().enabled = false;
+            }
         }
+
         target = null;
         return;
     }
