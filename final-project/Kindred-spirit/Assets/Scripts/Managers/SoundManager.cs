@@ -10,6 +10,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     AudioSource dogSwitchSound;
 
+    [SerializeField]
+    AudioSource spiritBreakSound;
+
     public void PlayHumanSwitch()
     {
         humanSwitchSound.Play();
@@ -19,4 +22,11 @@ public class SoundManager : MonoBehaviour
     {
         dogSwitchSound.Play();
     }
+
+    public void PlaySpiritBreak()
+    {
+        spiritBreakSound.Play();
+    }
+
+    
 }
