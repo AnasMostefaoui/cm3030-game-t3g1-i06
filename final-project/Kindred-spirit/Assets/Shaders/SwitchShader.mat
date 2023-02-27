@@ -24,11 +24,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseSpread: 2.02
+    - _BaseSpread: 1.13
     - _Distortion: 47.3
-    - _TopSpread: 1.81
-    - _Transparency: 1
-    - _WaveCount: 3.71
+    - _TopSpread: 1.16
+    - _Transparency: 0.574
+    - _WaveCount: 3.26
     - _WaveSpeed: 2.99
     m_Colors:
     - _ColorA: {r: 0, g: 0.5368862, b: 1, a: 1}
