@@ -100,14 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObjectTransform: {fileID: 0}
-  offset: {x: 4, y: 0, z: 0}
-  lookAtPlayer: 1
-  rotateAroundPlayer: 1
+  distance: 8
+  height: 5
   rotationSpeed: 5
-  smoothFactor: 1
-  mouseSensitivity: 1
-  lookSpeed: 2
-  lookXLimit: 45
+  shouldRecenter: 0
 --- !u!114 &3566740892957262232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,8 +252,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3566740893469059911}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 410.25336, y: 127.967514, z: 157.61096}
   m_Center: {x: -28.651398, y: 20.061424, z: 11.200699}
