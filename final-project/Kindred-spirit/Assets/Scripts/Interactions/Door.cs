@@ -16,25 +16,33 @@ public class Door : MonoBehaviour
     public float openingSpeed = 2f;
     private float originalY = 0;
     private DoorState doorState = DoorState.Closed;
-    private AudioSource doorOpenSound;
+
+    [SerializeField]
+    AudioSource doorReleaseSound;
+
+    [SerializeField]
+    AudioSource doorLoopSound;
+
+    [SerializeField]
+    AudioSource doorStopSound;
 
     private void Start()
     {
         originalY = transform.position.y;
-        doorOpenSound = gameObject.GetComponent<AudioSource>();
     }
 
     // Called when a door is opened
     public void OpenDoor()
     {
         doorState = DoorState.IsOpening;
-        doorOpenSound.Play();
+        doorReleaseSound.Play();
+        doorLoopSound.Play();
     }
 
     public void CloseDoor()
     {
         doorState = DoorState.IsClosing;
-        doorOpenSound.Play();
+        doorLoopSound.Play();
         StartCoroutine(ClosingDoor());
     }
 
@@ -44,6 +52,8 @@ public class Door : MonoBehaviour
         {
             if (transform.position.y <= originalY - openingDistance)
             {
+                doorStopSound.Play();
+                doorLoopSound.Stop();
                 doorState = DoorState.IsOpened;
             }
             else
@@ -59,6 +69,8 @@ public class Door : MonoBehaviour
         {
             if (transform.position.y >= originalY)
             {
+                doorStopSound.Play();
+                doorLoopSound.Stop();
                 doorState = DoorState.Closed;
             }
             else

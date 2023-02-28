@@ -114,7 +114,7 @@ public class SpiritManager : MonoBehaviour
             // Play the particle explosion
             spiritLinkObj.GetComponent<ParticleSystem>().Play();
 
-            
+            GameManager.Instance.soundManager.PlaySpiritBreak();
             spiritLine.enabled = false;
             StartCoroutine(GlowFadeOut());
         }
