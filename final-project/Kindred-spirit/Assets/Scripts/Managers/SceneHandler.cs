@@ -57,26 +57,28 @@ public class SceneHandler : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Loaded scene [" + scene.buildIndex + "] - " + scene.name + " -- " + SceneManager.sceneCountInBuildSettings);
-        if (scene.buildIndex == transitionScene.getIndex() )
-        {
-            StartCoroutine(LoadNextScene());
-        }
-
-        if(scene.buildIndex == SceneManager.sceneCountInBuildSettings)
-        {
-            nextScene = 0;
-        }
+        var sceneData = ScriptableObject.CreateInstance<SceneFlowData>();
+        sceneData.nextScene = Instance.nextScene;
+        sceneData.transitionScene = Instance.transitionScene;
+        sceneData.transitionTime = Instance.transitionTime;
+        StartCoroutine(SceneHandler.LoadNextScene(sceneData));
     }
 
-    public void LoadTransition()
+    public static void LoadTransition(SceneFlowData data)
     {
-        SceneManager.LoadScene(transitionScene.getIndex(), LoadSceneMode.Single);
+        SceneHandler.Instance.transitionScene = data.transitionScene;
+        SceneHandler.Instance.nextScene = data.nextScene;
+        SceneHandler.Instance.transitionTime = data.transitionTime;
+        SceneManager.LoadScene(SceneHandler.Instance.transitionScene.getIndex(), LoadSceneMode.Single);
     }
 
-    public IEnumerator LoadNextScene()
+    public static IEnumerator LoadNextScene(SceneFlowData data )
     {
+        SceneHandler.Instance.transitionScene = data.transitionScene;
+        SceneHandler.Instance.nextScene = data.nextScene;
+        SceneHandler.Instance.transitionTime = data.transitionTime;
         // Wait for the required time
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(nextScene.getIndex(), LoadSceneMode.Single);
+        yield return new WaitForSeconds(data.transitionTime);
+        SceneManager.LoadScene(SceneHandler.Instance.nextScene.getIndex(), LoadSceneMode.Single);
     }
 }
