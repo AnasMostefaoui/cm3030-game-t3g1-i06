@@ -10,6 +10,7 @@ public enum GameScenes
     Introduction,
     Level0,
     Level1,
+    Level2,
 }
 
 public static class GameScenesExtensions
@@ -28,14 +29,10 @@ public class SceneHandler : MonoBehaviour
     // Allow public access to SceneHandler singleton instance
     public static SceneHandler Instance { get { return instance; } }
 
-    [SerializeField]
-    public GameScenes nextScene;
+    private static GameScenes nextScene;
+    private static GameScenes transitionScene = GameScenes.Transition;
+    private static float transitionTime = 2f;
 
-    [SerializeField]
-    public GameScenes transitionScene = GameScenes.Transition;
-
-    [SerializeField]
-    private float transitionTime = 2f;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -58,27 +55,31 @@ public class SceneHandler : MonoBehaviour
     {
         Debug.Log("Loaded scene [" + scene.buildIndex + "] - " + scene.name + " -- " + SceneManager.sceneCountInBuildSettings);
         var sceneData = ScriptableObject.CreateInstance<SceneFlowData>();
-        sceneData.nextScene = Instance.nextScene;
-        sceneData.transitionScene = Instance.transitionScene;
-        sceneData.transitionTime = Instance.transitionTime;
-        StartCoroutine(SceneHandler.LoadNextScene(sceneData));
+        sceneData.nextScene = SceneHandler.nextScene;
+        sceneData.transitionScene = SceneHandler.transitionScene;
+        sceneData.transitionTime = SceneHandler.transitionTime;
+
+        if (scene.buildIndex == transitionScene.getIndex())
+        {
+            StartCoroutine(SceneHandler.LoadNextScene(sceneData));
+        }
     }
 
     public static void LoadTransition(SceneFlowData data)
     {
-        SceneHandler.Instance.transitionScene = data.transitionScene;
-        SceneHandler.Instance.nextScene = data.nextScene;
-        SceneHandler.Instance.transitionTime = data.transitionTime;
-        SceneManager.LoadScene(SceneHandler.Instance.transitionScene.getIndex(), LoadSceneMode.Single);
+        SceneHandler.transitionScene = data.transitionScene;
+        SceneHandler.nextScene = data.nextScene;
+        SceneHandler.transitionTime = data.transitionTime;
+        SceneManager.LoadScene(SceneHandler.transitionScene.getIndex(), LoadSceneMode.Single);
     }
 
     public static IEnumerator LoadNextScene(SceneFlowData data )
     {
-        SceneHandler.Instance.transitionScene = data.transitionScene;
-        SceneHandler.Instance.nextScene = data.nextScene;
-        SceneHandler.Instance.transitionTime = data.transitionTime;
+        SceneHandler.transitionScene = data.transitionScene;
+        SceneHandler.nextScene = data.nextScene;
+        SceneHandler.transitionTime = data.transitionTime;
         // Wait for the required time
         yield return new WaitForSeconds(data.transitionTime);
-        SceneManager.LoadScene(SceneHandler.Instance.nextScene.getIndex(), LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneHandler.nextScene.getIndex(), LoadSceneMode.Single);
     }
 }
