@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class IntroductionLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public SceneFlowData SceneData;
     private void OnEnable()
     {
-        StartCoroutine(SceneHandler.Instance.LoadNextScene());
+        StartCoroutine(SceneHandler.LoadNextScene(SceneData));
     }
     private void OnDestroy()
     {

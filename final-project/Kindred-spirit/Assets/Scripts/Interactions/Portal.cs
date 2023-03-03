@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+
+    public SceneFlowData SceneData;
     private void OnTriggerEnter(Collider other)
     {
-        SceneHandler.Instance.LoadTransition();
+        SceneHandler.LoadTransition(SceneData);
     }
 }
