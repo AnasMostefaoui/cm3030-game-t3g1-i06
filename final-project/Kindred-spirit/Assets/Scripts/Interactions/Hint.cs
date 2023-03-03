@@ -74,12 +74,22 @@ public class Hint : MonoBehaviour//ScriptableObject
 
     private void OnTriggerStay(Collider other)
     {
-        hintStatus = HintMessageStatus.Visible;
+        var hintForPlayer = isPlayerHint && other.gameObject.tag == "Player" && GameManager.Instance.isHumanSelected;
+        var hintForGhost = isGhostHint && other.gameObject.tag == "GhostPlayer" && GameManager.Instance.isGhostSelected;
+        if (hintForPlayer || hintForGhost)
+        {
+            hintStatus = HintMessageStatus.Visible;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        hintStatus = HintMessageStatus.FadingOut;
+        var hintForPlayer = isPlayerHint && other.gameObject.tag == "Player" && GameManager.Instance.isHumanSelected;
+        var hintForGhost = isGhostHint && other.gameObject.tag == "GhostPlayer" && GameManager.Instance.isGhostSelected;
+        if (hintForPlayer || hintForGhost)
+        {
+            hintStatus = HintMessageStatus.FadingOut;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
