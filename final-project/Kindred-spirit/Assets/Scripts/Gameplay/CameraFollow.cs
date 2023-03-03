@@ -17,6 +17,9 @@ public class CameraFollow : MonoBehaviour
     // force the camera to recenter on a target
     public bool shouldRecenter = false;
 
+    public bool shouldRecenterOnLongDistance = true;
+    public float recenterDistance = 10f;
+
 
     void Start()
     {
@@ -54,7 +57,16 @@ public class CameraFollow : MonoBehaviour
     public void SetTarget(Transform newTarget)
     {
         targetObjectTransform = newTarget;
-        shouldRecenter = true;
+        if(GameManager.Instance.PlayersAreClose(recenterDistance) == false && shouldRecenterOnLongDistance)
+        {
+            shouldRecenter = true;
+            return;
+        }
+        if(!shouldRecenterOnLongDistance)
+        {
+            shouldRecenter = true;
+            return;
+        }
     }
 
 
