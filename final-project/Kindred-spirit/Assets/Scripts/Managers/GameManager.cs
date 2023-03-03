@@ -162,4 +162,10 @@ public class GameManager : MonoBehaviour
 
     public bool isHumanSelected => currentPlayer == humanCharacter;
     public bool isGhostSelected => currentPlayer == ghostCharacter;
+
+    public bool PlayersAreClose( float distance = 10)
+    {
+        var currentDistance = Vector3.Distance(humanCharacter.transform.position, ghostCharacter.transform.position);
+        return currentDistance < distance;
+    }
 }
