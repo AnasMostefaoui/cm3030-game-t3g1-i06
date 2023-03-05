@@ -161,10 +161,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 1
   speed: 10
-  pushingSpeed: 1
   rotationSpeed: 720
   characterController: {fileID: 0}
+  isPushing: 0
   jumpHeight: 8
+  moveForwardOnly: 0
 --- !u!114 &3290750913555657597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +300,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8530477259689935259, guid: 1d2465e625f23fd4594038dc128f9bc9,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530477259689935259, guid: 1d2465e625f23fd4594038dc128f9bc9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5382c33834be144fe87924456353fd0b, type: 2}
     - target: {fileID: 8530477259692888253, guid: 1d2465e625f23fd4594038dc128f9bc9,
         type: 3}
       propertyPath: m_RootOrder
