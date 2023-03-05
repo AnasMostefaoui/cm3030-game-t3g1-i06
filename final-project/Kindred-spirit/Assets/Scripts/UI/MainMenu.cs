@@ -22,6 +22,8 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
         controlMenu.SetActive(false);
         creditsMenu.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void StartGame()

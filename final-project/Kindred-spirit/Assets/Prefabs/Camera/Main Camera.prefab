@@ -104,6 +104,8 @@ MonoBehaviour:
   height: 10
   rotationSpeed: 60
   shouldRecenter: 0
+  shouldRecenterOnLongDistance: 1
+  recenterDistance: 10
 --- !u!114 &3566740892957262232
 MonoBehaviour:
   m_ObjectHideFlags: 0
