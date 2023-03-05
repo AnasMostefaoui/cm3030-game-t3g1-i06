@@ -35179,7 +35179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDistance: 10
-  openingSpeed: 2
+  openingSpeed: 6
   doorReleaseSound: {fileID: 3284153816012511866}
   doorLoopSound: {fileID: 7069342099664417220}
   doorStopSound: {fileID: 4163017328253160793}
