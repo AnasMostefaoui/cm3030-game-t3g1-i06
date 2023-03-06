@@ -122,6 +122,11 @@ public class GameManager : MonoBehaviour
 
     public void CharacterSwitch()
     {
+        if(!currentPlayer.GetComponent<Mover>().characterController.isGrounded)
+        {
+            return;
+        }
+
         if(humanCharacter.GetComponent<HumanPlayer>().canSwitch == false )
         {
             return;
