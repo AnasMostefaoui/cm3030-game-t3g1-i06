@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Reference to both Characters
     private GameObject humanCharacter;
     private GameObject ghostCharacter;
-    private GameObject currentPlayer;
+    public GameObject currentPlayer;
     private bool _isGameOver = false;
 
     // Main camera for switching
