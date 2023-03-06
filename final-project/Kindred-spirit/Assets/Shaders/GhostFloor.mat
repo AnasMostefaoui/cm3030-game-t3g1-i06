@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GhostDog
+  m_Name: GhostFloor
   m_Shader: {fileID: 4800000, guid: b8d330f9bd0e74b65bcf0cd3a9a4b9ea, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -24,13 +24,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseSpread: 1.08
-    - _Distortion: 36.8
+    - _BaseSpread: 0
+    - _Distortion: 28.6
     - _TopBottomRemover: 0
-    - _TopSpread: 1.17
-    - _Transparency: 0.849
-    - _WaveCount: 4.65
-    - _WaveSpeed: 2.54
+    - _TopSpread: 0
+    - _Transparency: 1
+    - _WaveCount: 0.62
+    - _WaveSpeed: 5.07
     m_Colors:
-    - _ColorA: {r: 0, g: 1, b: 0.50198245, a: 1}
+    - _ColorA: {r: 0, g: 1, b: 0.9472947, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
