@@ -10,6 +10,7 @@
         _WaveSpeed("Wave Speed", Range(0,10)) = 1
         _TopSpread("Top Spread",  Range(0,5))=1
         _BaseSpread("Base Spread",  Range(-0.5,5))=1
+        _TopBottomRemover("Remove top/bottom planes", Range(0,1)) = 1
     }
     SubShader
     {
@@ -57,6 +58,7 @@
                 float _WaveSpeed;
                 float _TopSpread;
                 float _BaseSpread;
+                float _TopBottomRemover;
             CBUFFER_END
 
 
@@ -81,8 +83,9 @@
                 float transparency = cos((inp.uv.y + xOffset - _Time.y * _WaveSpeed * 0.1) * _WaveCount * 5) * 0.5 + 0.5;
                 transparency *= _Transparency - inp.uv.y;
 
-                float topBottomRemover = (abs(inp.normal.y) < 0.999);
-                float waves = transparency * topBottomRemover;
+                float waves = transparency;
+                if(_TopBottomRemover == 1) waves *= (abs(inp.normal.y) < 0.999);
+
                 float4 gradient = lerp( _ColorA, _ColorB, inp.uv.y );
 
                 return gradient * waves;
