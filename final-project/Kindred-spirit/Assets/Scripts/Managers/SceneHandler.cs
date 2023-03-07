@@ -10,7 +10,7 @@ public enum GameScenes
     Introduction,
     Level0,
     Level1,
-    Level2,
+    End,
 }
 
 public static class GameScenesExtensions

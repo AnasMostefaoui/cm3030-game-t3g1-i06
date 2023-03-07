@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ThirdLevelTransitionData
   m_EditorClassIdentifier: 
   nextScene: 0
-  transitionScene: 1
+  transitionScene: 5
   transitionTime: 3
