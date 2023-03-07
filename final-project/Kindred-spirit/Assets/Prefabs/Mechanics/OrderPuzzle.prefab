@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &3366151752281556557
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4898707267470359491}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.21, y: 60.31, z: 12.72}
-  m_Center: {x: 0.004399564, y: -6.1741614, z: 0.28159282}
 --- !u!65 &3366151752677150130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -215,13 +202,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &3366151753461579293
+--- !u!65 &3366151752281556557
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4898707268445796512}
+  m_GameObject: {fileID: 4898707267470359491}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -235,6 +222,19 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4898707267787854127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.21, y: 60.31, z: 12.72}
+  m_Center: {x: 0.004399564, y: -6.1741614, z: 0.28159282}
+--- !u!65 &3366151753461579293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898707268445796512}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -335,6 +335,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -350,9 +360,19 @@ PrefabInstance:
       objectReference: {fileID: 3366151752730693913}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283663595235077}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3366151752730693913}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283663595235077}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -362,6 +382,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PuzzlePairsTigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
@@ -395,6 +425,12 @@ Transform:
 --- !u!1 &4898707267787854127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7876036403342236660, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+    type: 3}
+  m_PrefabInstance: {fileID: 3366151751770884827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6040283663595235077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035800654209920478, guid: 51799eb2192b86c4ca2ab6788f4a2600,
     type: 3}
   m_PrefabInstance: {fileID: 3366151751770884827}
   m_PrefabAsset: {fileID: 0}
@@ -492,6 +528,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -507,9 +553,19 @@ PrefabInstance:
       objectReference: {fileID: 3366151752730693913}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283663275331049}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3366151752730693913}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283663275331049}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -519,6 +575,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PuzzlePairsTigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
@@ -552,6 +618,12 @@ Transform:
 --- !u!1 &4898707267470359491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7876036403342236660, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+    type: 3}
+  m_PrefabInstance: {fileID: 3366151752091148343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6040283663275331049 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035800654209920478, guid: 51799eb2192b86c4ca2ab6788f4a2600,
     type: 3}
   m_PrefabInstance: {fileID: 3366151752091148343}
   m_PrefabAsset: {fileID: 0}
@@ -740,6 +812,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -755,9 +837,19 @@ PrefabInstance:
       objectReference: {fileID: 3366151752730693913}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283664254439050}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3366151752730693913}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6040283664254439050}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -767,6 +859,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PuzzlePairsTigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
@@ -800,6 +902,12 @@ Transform:
 --- !u!1 &4898707268445796512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7876036403342236660, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+    type: 3}
+  m_PrefabInstance: {fileID: 3366151753259524948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6040283664254439050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9035800654209920478, guid: 51799eb2192b86c4ca2ab6788f4a2600,
     type: 3}
   m_PrefabInstance: {fileID: 3366151753259524948}
   m_PrefabAsset: {fileID: 0}
@@ -1170,6 +1278,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 2
       objectReference: {fileID: 0}
@@ -1185,9 +1303,19 @@ PrefabInstance:
       objectReference: {fileID: 3366151752730693913}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4073448539391687198}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3366151752730693913}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4073448539391687198}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
       propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1197,6 +1325,16 @@ PrefabInstance:
         type: 3}
       propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PuzzlePairsTigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOn.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+        type: 3}
+      propertyPath: wallSwitchOff.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7876036403342236663, guid: 51799eb2192b86c4ca2ab6788f4a2600,
         type: 3}
@@ -1221,15 +1359,21 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7876036403342236662, guid: 51799eb2192b86c4ca2ab6788f4a2600, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 51799eb2192b86c4ca2ab6788f4a2600, type: 3}
+--- !u!1 &2931590943623121972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7876036403342236660, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+    type: 3}
+  m_PrefabInstance: {fileID: 5035683057138063296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &306465662902057946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4729518389872782362, guid: 51799eb2192b86c4ca2ab6788f4a2600,
     type: 3}
   m_PrefabInstance: {fileID: 5035683057138063296}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2931590943623121972 stripped
+--- !u!1 &4073448539391687198 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7876036403342236660, guid: 51799eb2192b86c4ca2ab6788f4a2600,
+  m_CorrespondingSourceObject: {fileID: 9035800654209920478, guid: 51799eb2192b86c4ca2ab6788f4a2600,
     type: 3}
   m_PrefabInstance: {fileID: 5035683057138063296}
   m_PrefabAsset: {fileID: 0}

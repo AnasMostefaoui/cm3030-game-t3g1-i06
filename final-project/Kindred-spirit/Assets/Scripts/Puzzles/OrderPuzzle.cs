@@ -48,6 +48,8 @@ public class OrderPuzzle : MonoBehaviour
                     if (puzzlePairs[i].trigger == triggerObj)
                     {
                         puzzlePairs[i].fire.gameObject.SetActive(true);
+                        puzzlePairs[i].trigger.transform.parent.transform.Find("GlowActive").gameObject.SetActive(true);
+                        puzzlePairs[i].trigger.transform.parent.transform.Find("GlowInactive").gameObject.SetActive(false);
                         puzzleSound.clip = correctSound;
                         puzzleSound.Play();
                         if (CheckCompletion())
@@ -66,6 +68,8 @@ public class OrderPuzzle : MonoBehaviour
                 for (int i = 0; i < puzzlePairs.Length; i++)
                 {
                     puzzlePairs[i].fire.gameObject.SetActive(false);
+                    puzzlePairs[i].trigger.transform.parent.transform.Find("GlowActive").gameObject.SetActive(false);
+                    puzzlePairs[i].trigger.transform.parent.transform.Find("GlowInactive").gameObject.SetActive(true);
                 }
             }
         }
