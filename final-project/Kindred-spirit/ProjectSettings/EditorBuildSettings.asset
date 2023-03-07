@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Release/Level1_GetToKnowYourDog.unity
     guid: 93196d4c8fc024bd6925b115223e4bb9
+  - enabled: 1
+    path: Assets/Scenes/Release/End.unity
+    guid: d4de5c7b530e5fd418cc96ad2b1c9af4
   m_configObjects: {}
